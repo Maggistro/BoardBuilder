@@ -14,11 +14,12 @@ namespace BoardBuilders
         protected bool isActive = false;
         protected List<Card> productionCostList = new List<Card>();
         protected List<FIELDTYPE> buildPlace = new List<FIELDTYPE>();
+        protected int[] position = new int[2];
 
-        //do some stuff the moment the building is placed
-        public void build()
+        //place building at position newPos
+        public void build(int[] newPos)
         {
-            
+            position = newPos;
         }
 
         //return costs for build building

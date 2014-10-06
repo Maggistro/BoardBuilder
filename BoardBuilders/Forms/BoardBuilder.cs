@@ -76,7 +76,7 @@ namespace BoardBuilders
                     x = int.Parse(dialog.getColumn());
                     y = int.Parse(dialog.getRow());
                 }
-                catch (Exception except)
+                catch (Exception)
                 {
                     MessageBox.Show("Wrong Number Format! Only Numbers are allowed", "OK", MessageBoxButtons.OK);
                 }
