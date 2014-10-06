@@ -1,0 +1,11 @@
+c:\users\maggistro\documents\visual studio 2013\Projects\BoardBuilders\BoardBuilders\bin\Debug\BoardBuilders.exe.config
+c:\users\maggistro\documents\visual studio 2013\Projects\BoardBuilders\BoardBuilders\obj\Debug\BoardBuilders.csprojResolveAssemblyReference.cache
+c:\users\maggistro\documents\visual studio 2013\Projects\BoardBuilders\BoardBuilders\obj\Debug\BoardBuilders.BoardBuilder.resources
+c:\users\maggistro\documents\visual studio 2013\Projects\BoardBuilders\BoardBuilders\obj\Debug\BoardBuilders.Properties.Resources.resources
+c:\users\maggistro\documents\visual studio 2013\Projects\BoardBuilders\BoardBuilders\obj\Debug\BoardBuilders.csproj.GenerateResource.Cache
+c:\users\maggistro\documents\visual studio 2013\Projects\BoardBuilders\BoardBuilders\bin\Debug\BoardBuilders.exe
+c:\users\maggistro\documents\visual studio 2013\Projects\BoardBuilders\BoardBuilders\bin\Debug\BoardBuilders.pdb
+c:\users\maggistro\documents\visual studio 2013\Projects\BoardBuilders\BoardBuilders\obj\Debug\BoardBuilders.exe
+c:\users\maggistro\documents\visual studio 2013\Projects\BoardBuilders\BoardBuilders\obj\Debug\BoardBuilders.pdb
+c:\users\maggistro\documents\visual studio 2013\Projects\BoardBuilders\BoardBuilders\obj\Debug\BoardBuilders.FieldButtonDemo.resources
+c:\users\maggistro\documents\visual studio 2013\Projects\BoardBuilders\BoardBuilders\obj\Debug\BoardBuilders.GenerateForm.resources
