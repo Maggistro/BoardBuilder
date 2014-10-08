@@ -18,6 +18,8 @@ namespace BoardBuilders.Buildings
             isActive = true;
             //set needed build space
             buildPlace.Add(FIELDTYPE.WOODS);
+            //set name
+            name = "Holzfäller";
         }
 
     }

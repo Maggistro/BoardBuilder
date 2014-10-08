@@ -19,12 +19,14 @@ namespace BoardBuilders
 
         public Field(){
             type = FIELDTYPE.EMPTY;
-            unit = null;
-            building = null;
+            unit = new Unit();
+            building = new Building();
         }
 
         public Field(int newType){
-            type = (FIELDTYPE)newType;            
+            type = (FIELDTYPE)newType;
+            unit = new Unit();
+            building = new Building();        
         }
 
     }

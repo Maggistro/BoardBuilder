@@ -15,11 +15,12 @@ namespace BoardBuilders
         protected List<Card> productionCostList = new List<Card>();
         protected List<FIELDTYPE> buildPlace = new List<FIELDTYPE>();
         protected int[] position = new int[2];
+        protected string name = "";
 
         //place building at position newPos
-        public void build(int[] newPos)
+        public void build(int x, int y)
         {
-            position = newPos;
+            position = new int[2]{x,y};
         }
 
         //return costs for build building
@@ -53,5 +54,9 @@ namespace BoardBuilders
             return buildPlace;
         }
 
+        public string getName()
+        {
+            return name;
+        }
     }
 }

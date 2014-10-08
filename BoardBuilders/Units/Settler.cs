@@ -8,8 +8,7 @@ namespace BoardBuilders.Units
 {
     class Settler:Unit
     {
-        public Settler(int[] position)
-            :base(position)
+        public Settler()
         {
             //set cost to 3 food, 3 wood and 3 stone
             recruitCostList.Add(new Card(CARDTYPE.FOOD));

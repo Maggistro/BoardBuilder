@@ -8,9 +8,9 @@ namespace BoardBuilders
 {
     class Player
     {
-        List<Card> hand;
-        List<Unit> units;
-        List<Building> buildings;
+        List<Card> hand = new List<Card>();
+        List<Unit> units = new List<Unit>();
+        List<Building> buildings = new List<Building>();
 
 
         public void startTurn()
@@ -20,7 +20,10 @@ namespace BoardBuilders
 
         private void evaluateBuildings()
         {
-
+            foreach(Building element in buildings)
+            {
+                hand.AddRange(element.getProduct());  
+            }
         }
 
         public void endTurn()

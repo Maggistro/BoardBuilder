@@ -8,8 +8,7 @@ namespace BoardBuilders.Units
 {
     class Scout:Unit
     {
-        public Scout(int[] newPosition)
-            :base(newPosition)
+        public Scout()
         {
             //set cost to 4 food
             recruitCostList.Add(new Card(CARDTYPE.FOOD));

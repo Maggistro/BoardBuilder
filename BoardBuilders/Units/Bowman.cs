@@ -8,8 +8,7 @@ namespace BoardBuilders.Units
 {
     class Bowman:Unit
     {
-        public Bowman(int[] position)
-            : base(position)
+        public Bowman()
         {
             //set cost to 5 food and 1 bow
             recruitCostList.Add(new Card(CARDTYPE.FOOD));

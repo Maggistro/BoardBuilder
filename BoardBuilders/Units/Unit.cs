@@ -21,8 +21,10 @@ namespace BoardBuilders
         protected int defensePoints = 0;
         protected int range = 0;
         protected int[] position = new int[2];
+        protected string name = "";
 
-        public Unit(int[] newPos)
+
+        public void rectruit(int[] newPos)
         {
             position = newPos;
         }
@@ -69,5 +71,10 @@ namespace BoardBuilders
             return allowedActions;
         }
 
+
+        public string getName()
+        {
+            return name;
+        }
     }
 }
