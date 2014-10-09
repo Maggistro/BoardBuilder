@@ -15,7 +15,8 @@ G:\Anwendungen\workspace\BoardBuilder\BoardBuilders\obj\Debug\BoardBuilders.pdb
 G:\Anwendungen\workspace\BoardBuilder\BoardBuilders\bin\Debug\BoardBuilders.exe
 G:\Anwendungen\workspace\BoardBuilder\BoardBuilders\bin\Debug\BoardBuilders.pdb
 G:\Anwendungen\workspace\BoardBuilder\BoardBuilders\obj\Debug\BoardBuilders.csprojResolveAssemblyReference.cache
-G:\Anwendungen\workspace\BoardBuilder\BoardBuilders\obj\Debug\BoardBuilders.BoardBuilder.resources
-G:\Anwendungen\workspace\BoardBuilder\BoardBuilders\obj\Debug\BoardBuilders.GenerateForm.resources
 G:\Anwendungen\workspace\BoardBuilder\BoardBuilders\obj\Debug\BoardBuilders.Properties.Resources.resources
 G:\Anwendungen\workspace\BoardBuilder\BoardBuilders\obj\Debug\BoardBuilders.csproj.GenerateResource.Cache
+G:\Anwendungen\workspace\BoardBuilder\BoardBuilders\obj\Debug\BoardBuilders.BoardForms.BoardBuilder.resources
+G:\Anwendungen\workspace\BoardBuilder\BoardBuilders\obj\Debug\BoardBuilders.BoardForms.GenerateForm.resources
+G:\Anwendungen\workspace\BoardBuilder\BoardBuilders\obj\Debug\BoardBuilders.BoardForms.HoverForm.resources

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BoardBuilders
+namespace BoardBuilders.BoardForms
 {
     public partial class GenerateForm : Form
     {

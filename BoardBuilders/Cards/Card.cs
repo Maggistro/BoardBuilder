@@ -23,5 +23,10 @@ namespace BoardBuilders
         {
             return type;
         }
+
+        public override bool Equals(object obj)
+        {
+            return ((Card)obj).getType() == this.type;
+        }
     }
 }

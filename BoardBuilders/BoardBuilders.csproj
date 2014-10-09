@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoardForms\HoverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BoardForms\HoverForm.Designer.cs">
+      <DependentUpon>HoverForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="Buildings\Armorsmith.cs" />
     <Compile Include="Buildings\Bowyer.cs" />
@@ -63,22 +69,22 @@
     <Compile Include="Buildings\Woodcutter.cs" />
     <Compile Include="Cards\Card.cs" />
     <Compile Include="Field.cs" />
-    <Compile Include="Forms\BoardBuilder.cs">
+    <Compile Include="BoardForms\BoardBuilder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BoardBuilder.Designer.cs">
+    <Compile Include="BoardForms\BoardBuilder.Designer.cs">
       <DependentUpon>BoardBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FieldButton.cs">
+    <Compile Include="BoardForms\FieldButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\FieldButton.Designer.cs">
+    <Compile Include="BoardForms\FieldButton.Designer.cs">
       <DependentUpon>FieldButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\GenerateForm.cs">
+    <Compile Include="BoardForms\GenerateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\GenerateForm.Designer.cs">
+    <Compile Include="BoardForms\GenerateForm.Designer.cs">
       <DependentUpon>GenerateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Player.cs" />
@@ -89,11 +95,14 @@
     <Compile Include="Units\Settler.cs" />
     <Compile Include="Units\Swordsman.cs" />
     <Compile Include="Units\Unit.cs" />
-    <EmbeddedResource Include="Forms\BoardBuilder.resx">
+    <EmbeddedResource Include="BoardForms\BoardBuilder.resx">
       <DependentUpon>BoardBuilder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GenerateForm.resx">
+    <EmbeddedResource Include="BoardForms\GenerateForm.resx">
       <DependentUpon>GenerateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoardForms\HoverForm.resx">
+      <DependentUpon>HoverForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

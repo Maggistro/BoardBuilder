@@ -1,4 +1,4 @@
-﻿namespace BoardBuilders
+﻿namespace BoardBuilders.BoardForms
 {
     partial class GenerateForm
     {

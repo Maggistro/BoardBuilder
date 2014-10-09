@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BoardBuilders
+namespace BoardBuilders.BoardForms
 {
     public enum FIELDSTATUS
     {
@@ -30,8 +30,15 @@ namespace BoardBuilders
         //additional label for hover information
         Label infoLabel = new Label();
 
+        //form for hover highlighting
+        HoverForm hoverForm = new HoverForm();
+        int[] hoverPosition = new int[2];
+
         //temporary Building for placing
         Building tempBuilding;
+
+        //active Player
+        Player activePlayer;
 
         public BoardBuilder()
         {
@@ -40,18 +47,31 @@ namespace BoardBuilders
             
             //set initial info label parameters
             this.infoLabel.AutoSize = true;
-            this.infoLabel.Location = new System.Drawing.Point(320, 120);
+            this.infoLabel.Location = new System.Drawing.Point(0, 0);
             this.infoLabel.Size = new System.Drawing.Size(35, 13);
             this.infoLabel.Parent = this;
             this.infoLabel.BackColor = Color.White;
             this.infoLabel.Name = "infoLabel";
             this.Controls.Add(this.infoLabel);
 
-            //initialise the transparent form
+            //set initial hoverForm
+            this.LocationChanged += BoardBuilder_LocationChanged; //update hoverform
+            this.hoverForm.Location = this.Location;
+            this.hoverForm.Name = "hoverForm";
+            this.hoverForm.Click += hoverForm_Click;
             
+            //default active player
+            activePlayer = new Player();
 
             InitializeComponent();
         }
+
+        void BoardBuilder_LocationChanged(object sender, EventArgs e)
+        {
+            this.hoverForm.Location = this.Location;
+        }
+
+
 
         //generate game board with x,y size
         private void generateBoard(int x, int y)
@@ -66,7 +86,7 @@ namespace BoardBuilders
         private void generateField()
         {
             int posX = 0;
-            int posY = 0;
+            int posY = this.GameMenu.Height;
             for (int line = 0; line < mainBoard.boardsize[1]; line++)
             {
                 for (int col = 0; col < mainBoard.boardsize[0]; col++)
@@ -113,17 +133,31 @@ namespace BoardBuilders
        * HANDLERS FOR BUTTONS, MENU ETC.
        * 
        */
-        //handler for click on field
-        private void FieldButton_Click(object sender, EventArgs e)
+
+        //handles click on hoverform
+        void hoverForm_Click(object sender, EventArgs e)
         {
             if (status == FIELDSTATUS.BUILDING)
             {
-                tempBuilding.build(((FieldButton)sender).x, ((FieldButton)sender).y);
+                //check for building cost
+                if(activePlayer.pay(tempBuilding.getBuildCost()))
+                {
+                    tempBuilding.build(hoverPosition[0], hoverPosition[1]);
+                    mainBoard.getField(hoverPosition[0], hoverPosition[1]).building = tempBuilding;
+                    status = FIELDSTATUS.NORMAL;
+                    hoverForm.Hide();
+                }
             }
-            else if (status == FIELDSTATUS.NORMAL)
+            else
             {
-                MessageBox.Show("Clicked at " + ((FieldButton)sender).Name);
+                hoverForm.Hide();
             }
+        }
+
+        //handler for click on field
+        private void FieldButton_Click(object sender, EventArgs e)
+        {
+                MessageBox.Show("Clicked at " + ((FieldButton)sender).Name);
         }
 
         //handler for disbanding hover information
@@ -144,12 +178,19 @@ namespace BoardBuilders
                     info += " ";
                 info += getBuildingAt(((FieldButton)sender).x, ((FieldButton)sender).y);
                 infoLabel.Text = info;
-                infoLabel.Location = new Point(((FieldButton)sender).drawX, ((FieldButton)sender).drawY);
+                infoLabel.Location = new Point(((FieldButton)sender).drawCenterX, ((FieldButton)sender).drawCenterY);
                 infoLabel.Show();
             }
             else if (status == FIELDSTATUS.BUILDING)
             {
-                ((FieldButton)sender).ForeColor = Color.WhiteSmoke;
+                int borderWidth = (this.Width - this.ClientSize.Width) / 2;
+                int titleBarHeight = this.Height - this.ClientSize.Height - borderWidth;
+                hoverForm.setShape(((FieldButton)sender).getShape());
+                Point hoverPoint = this.Location;
+                hoverPoint.Offset(new Point(((FieldButton)sender).drawX + borderWidth, ((FieldButton)sender).drawY + titleBarHeight));
+                hoverForm.Location = hoverPoint;
+                hoverPosition[0] = ((FieldButton)sender).x;
+                hoverPosition[1] = ((FieldButton)sender).y;
             }
         }
 
@@ -187,6 +228,8 @@ namespace BoardBuilders
         {
             tempBuilding = new Woodcutter();
             status = FIELDSTATUS.BUILDING;
+            hoverForm.setSize(tempBuilding.getBuildPlace().Count);
+            hoverForm.Show(this);
         }
 
 
