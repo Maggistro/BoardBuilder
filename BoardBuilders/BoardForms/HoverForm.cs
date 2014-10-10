@@ -38,5 +38,6 @@ namespace BoardBuilders.BoardForms
         {
             size = p;
         }
+
     }
 }

@@ -121,4 +121,7 @@
   <data name="Field" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\Field.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="woodcutter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\woodcutter.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

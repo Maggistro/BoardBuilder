@@ -50,6 +50,11 @@
     <Compile Include="BoardForms\HoverForm.Designer.cs">
       <DependentUpon>HoverForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Buildings\Barracks.cs" />
+    <Compile Include="Buildings\City.cs" />
+    <Compile Include="Buildings\Megacity.cs" />
+    <Compile Include="Buildings\Settlement.cs" />
+    <Compile Include="Buildings\Village.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Buildings\Armorsmith.cs" />
     <Compile Include="Buildings\Bowyer.cs" />
@@ -130,6 +135,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\Field.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\woodcutter.bmp" />
+    <Content Include="assets\woodcutter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,6 +16,10 @@ namespace BoardBuilders.BoardForms
         private System.Drawing.Drawing2D.GraphicsPath shape = new System.Drawing.Drawing2D.GraphicsPath();
         BoardBuilder parent;
         public int x, y, drawX, drawY, drawCenterX, drawCenterY;
+        private Bitmap building;
+        private Bitmap unit;
+        private Size imageSize;
+        Graphics g;
 
         public FieldButton()
         {
@@ -34,6 +38,7 @@ namespace BoardBuilders.BoardForms
             return shape;
         }
 
+        //method for manually setting a shape CARE: THIS DOES NOT UPDATE THE DRAWCENTER AND DRAW POINTS
         public void setShape(System.Drawing.Drawing2D.GraphicsPath newShape)
         {
             shape = newShape;
@@ -46,12 +51,18 @@ namespace BoardBuilders.BoardForms
             parent = (BoardBuilder)this.Parent;
             //get position from name
             string[] pos = this.Name.Split(':');
+            //position on the game grid array
             x = int.Parse(pos[1]);
             y = int.Parse(pos[2]);
+            //position of the center of the fieldbutton in pixels for the parent form
             drawCenterX = int.Parse(pos[3]) + triangle[2].X;
             drawCenterY = int.Parse(pos[4]) + (triangle[2].Y + triangle[1].Y) / 2;
+            //position of the upper left corner of the fieldbutton in pixels for the parent form
             drawX = int.Parse(pos[3]);
             drawY = int.Parse(pos[4]);
+            //position for the image to be drawn relative to the fieldbutton
+            imageSize = new Size(triangle[1].X / 2, (triangle[2].Y + triangle[1].Y) / 2);
+ 
         }
 
         public FieldButton(Point[] size, FIELDTYPE type)
@@ -87,8 +98,27 @@ namespace BoardBuilders.BoardForms
             //to see.
             this.Size = new System.Drawing.Size(100, 100);
             this.Region = new Region(shape);
+            if (building != null)
+            {
+                g.DrawImage(building, triangle[1].X / 4, (triangle[1].Y + triangle[2].Y) / 5);
+                g.Flush();
+            }
+           
         }
-   
+
+        //set building image
+        public void setBuildingImage(Image buildingImage)
+        {
+            //position for the image to be drawn relative to the fieldbutton
+            Bitmap temp = new Bitmap(buildingImage);
+            temp.MakeTransparent(Color.White);
+            this.building = new Bitmap(temp,imageSize);
+            //this.BackgroundImage = building;
+            //this.BackgroundImageLayout = ImageLayout.Center;
+            g = this.CreateGraphics();
+            g.DrawImage(building, triangle[1].X/4, (triangle[1].Y+triangle[2].Y)/5);
+            g.Flush();
+        }
 
     }
 }

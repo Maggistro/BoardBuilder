@@ -49,6 +49,7 @@
             this.Controls.Add(this.fieldButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HoverForm";
+            this.ShowInTaskbar = false;
             this.Text = "HoverForm";
             this.TransparencyKey = System.Drawing.Color.White;
             this.ResumeLayout(false);

@@ -29,40 +29,41 @@
         private void InitializeComponent()
         {
             this.GameMenu = new System.Windows.Forms.MenuStrip();
-            this.spielToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generiereWeltToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.turnLabel = new System.Windows.Forms.Label();
-            this.baumenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produktionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.holzfällerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.steinmetzToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.obstplantageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jägerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateWorldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buildmenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.woodcutterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stonemasonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fruitfarmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hunterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fischerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kohlemineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eisenmineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verarbeitungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eisenschmelzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.schwertschmiedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rüstungsschmiedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bogenmacheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.spezialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.warenlageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.straßeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kaserneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ausbauToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dorfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stadtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.großstadtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.einheitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.siedlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.coalmineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ironmineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refiningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ironsmelterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.swordsmithToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.armorsmithToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bowyerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.specialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.storageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.streetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.baracksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.upgradeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.villageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.megacityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settlerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bogenschützeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.schwertkämpferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.spielerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.handkartenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zugBeendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.handelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bowmanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.swordsmanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tradeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.endturnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.handToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.turnLabel = new System.Windows.Forms.Label();
+            this.activePlayerLabel = new System.Windows.Forms.Label();
             this.GameMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,215 +71,212 @@
             // 
             this.GameMenu.BackColor = System.Drawing.SystemColors.ControlDark;
             this.GameMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.spielToolStripMenuItem,
-            this.baumenuToolStripMenuItem,
-            this.einheitenToolStripMenuItem,
-            this.spielerToolStripMenuItem});
+            this.gameToolStripMenuItem,
+            this.buildmenuToolStripMenuItem,
+            this.unitsToolStripMenuItem,
+            this.playerToolStripMenuItem});
             this.GameMenu.Location = new System.Drawing.Point(0, 0);
             this.GameMenu.Name = "GameMenu";
-            this.GameMenu.Size = new System.Drawing.Size(500, 24);
+            this.GameMenu.Size = new System.Drawing.Size(508, 24);
             this.GameMenu.TabIndex = 1;
             this.GameMenu.Text = "menuStrip1";
             // 
-            // spielToolStripMenuItem
+            // gameToolStripMenuItem
             // 
-            this.spielToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generiereWeltToolStripMenuItem});
-            this.spielToolStripMenuItem.Name = "spielToolStripMenuItem";
-            this.spielToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.spielToolStripMenuItem.Text = "Spiel";
+            this.gameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generateWorldToolStripMenuItem});
+            this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.gameToolStripMenuItem.Text = "Spiel";
             // 
-            // generiereWeltToolStripMenuItem
+            // generateWorldToolStripMenuItem
             // 
-            this.generiereWeltToolStripMenuItem.Name = "generiereWeltToolStripMenuItem";
-            this.generiereWeltToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.generiereWeltToolStripMenuItem.Text = "Generiere Welt";
-            this.generiereWeltToolStripMenuItem.Click += new System.EventHandler(this.generiereWeltToolStripMenuItem_Click);
+            this.generateWorldToolStripMenuItem.Name = "generateWorldToolStripMenuItem";
+            this.generateWorldToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.generateWorldToolStripMenuItem.Text = "Generiere Welt";
+            this.generateWorldToolStripMenuItem.Click += new System.EventHandler(this.generiereWeltToolStripMenuItem_Click);
             // 
-            // turnLabel
+            // buildmenuToolStripMenuItem
             // 
-            this.turnLabel.AutoSize = true;
-            this.turnLabel.Location = new System.Drawing.Point(425, 5);
-            this.turnLabel.Name = "turnLabel";
-            this.turnLabel.Size = new System.Drawing.Size(63, 13);
-            this.turnLabel.TabIndex = 3;
-            this.turnLabel.Text = "Zuganzeige";
+            this.buildmenuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productionToolStripMenuItem,
+            this.refiningToolStripMenuItem,
+            this.specialToolStripMenuItem,
+            this.upgradeToolStripMenuItem});
+            this.buildmenuToolStripMenuItem.Name = "buildmenuToolStripMenuItem";
+            this.buildmenuToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.buildmenuToolStripMenuItem.Text = "Baumenu";
             // 
-            // baumenuToolStripMenuItem
+            // productionToolStripMenuItem
             // 
-            this.baumenuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.produktionToolStripMenuItem,
-            this.verarbeitungToolStripMenuItem,
-            this.spezialToolStripMenuItem,
-            this.ausbauToolStripMenuItem});
-            this.baumenuToolStripMenuItem.Name = "baumenuToolStripMenuItem";
-            this.baumenuToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.baumenuToolStripMenuItem.Text = "Baumenu";
-            // 
-            // produktionToolStripMenuItem
-            // 
-            this.produktionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.holzfällerToolStripMenuItem,
-            this.steinmetzToolStripMenuItem,
-            this.obstplantageToolStripMenuItem,
-            this.jägerToolStripMenuItem,
+            this.productionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.woodcutterToolStripMenuItem,
+            this.stonemasonToolStripMenuItem,
+            this.fruitfarmToolStripMenuItem,
+            this.hunterToolStripMenuItem,
             this.fischerToolStripMenuItem,
-            this.kohlemineToolStripMenuItem,
-            this.eisenmineToolStripMenuItem});
-            this.produktionToolStripMenuItem.Name = "produktionToolStripMenuItem";
-            this.produktionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.produktionToolStripMenuItem.Text = "Produktion";
+            this.coalmineToolStripMenuItem,
+            this.ironmineToolStripMenuItem});
+            this.productionToolStripMenuItem.Name = "productionToolStripMenuItem";
+            this.productionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productionToolStripMenuItem.Text = "Produktion";
             // 
-            // holzfällerToolStripMenuItem
+            // woodcutterToolStripMenuItem
             // 
-            this.holzfällerToolStripMenuItem.Name = "holzfällerToolStripMenuItem";
-            this.holzfällerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.holzfällerToolStripMenuItem.Text = "Holzfäller";
-            this.holzfällerToolStripMenuItem.Click += new System.EventHandler(this.holzfällerToolStripMenuItem_Click);
+            this.woodcutterToolStripMenuItem.Name = "woodcutterToolStripMenuItem";
+            this.woodcutterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.woodcutterToolStripMenuItem.Text = "Holzfäller";
+            this.woodcutterToolStripMenuItem.Click += new System.EventHandler(this.woodcutterToolStripMenuItem_Click);
             // 
-            // steinmetzToolStripMenuItem
+            // stonemasonToolStripMenuItem
             // 
-            this.steinmetzToolStripMenuItem.Name = "steinmetzToolStripMenuItem";
-            this.steinmetzToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.steinmetzToolStripMenuItem.Text = "Steinmetz";
+            this.stonemasonToolStripMenuItem.Name = "stonemasonToolStripMenuItem";
+            this.stonemasonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stonemasonToolStripMenuItem.Text = "Steinmetz";
+            this.stonemasonToolStripMenuItem.Click += new System.EventHandler(this.stonemasonToolStripMenuItem_Click);
             // 
-            // obstplantageToolStripMenuItem
+            // fruitfarmToolStripMenuItem
             // 
-            this.obstplantageToolStripMenuItem.Name = "obstplantageToolStripMenuItem";
-            this.obstplantageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.obstplantageToolStripMenuItem.Text = "Obstplantage";
+            this.fruitfarmToolStripMenuItem.Name = "fruitfarmToolStripMenuItem";
+            this.fruitfarmToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fruitfarmToolStripMenuItem.Text = "Obstplantage";
+            this.fruitfarmToolStripMenuItem.Click += new System.EventHandler(this.fruitfarmToolStripMenuItem_Click);
             // 
-            // jägerToolStripMenuItem
+            // hunterToolStripMenuItem
             // 
-            this.jägerToolStripMenuItem.Name = "jägerToolStripMenuItem";
-            this.jägerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.jägerToolStripMenuItem.Text = "Jäger";
+            this.hunterToolStripMenuItem.Name = "hunterToolStripMenuItem";
+            this.hunterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hunterToolStripMenuItem.Text = "Jäger";
+            this.hunterToolStripMenuItem.Click += new System.EventHandler(this.hunterToolStripMenuItem_Click);
             // 
             // fischerToolStripMenuItem
             // 
             this.fischerToolStripMenuItem.Name = "fischerToolStripMenuItem";
             this.fischerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fischerToolStripMenuItem.Text = "Fischer";
+            this.fischerToolStripMenuItem.Click += new System.EventHandler(this.fischerToolStripMenuItem_Click);
             // 
-            // kohlemineToolStripMenuItem
+            // coalmineToolStripMenuItem
             // 
-            this.kohlemineToolStripMenuItem.Name = "kohlemineToolStripMenuItem";
-            this.kohlemineToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.kohlemineToolStripMenuItem.Text = "Kohlemine";
+            this.coalmineToolStripMenuItem.Name = "coalmineToolStripMenuItem";
+            this.coalmineToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.coalmineToolStripMenuItem.Text = "Kohlemine";
+            this.coalmineToolStripMenuItem.Click += new System.EventHandler(this.coalmineToolStripMenuItem_Click);
             // 
-            // eisenmineToolStripMenuItem
+            // ironmineToolStripMenuItem
             // 
-            this.eisenmineToolStripMenuItem.Name = "eisenmineToolStripMenuItem";
-            this.eisenmineToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.eisenmineToolStripMenuItem.Text = "Eisenmine";
+            this.ironmineToolStripMenuItem.Name = "ironmineToolStripMenuItem";
+            this.ironmineToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ironmineToolStripMenuItem.Text = "Eisenmine";
+            this.ironmineToolStripMenuItem.Click += new System.EventHandler(this.ironmineToolStripMenuItem_Click);
             // 
-            // verarbeitungToolStripMenuItem
+            // refiningToolStripMenuItem
             // 
-            this.verarbeitungToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eisenschmelzeToolStripMenuItem,
-            this.schwertschmiedToolStripMenuItem,
-            this.rüstungsschmiedToolStripMenuItem,
-            this.bogenmacheToolStripMenuItem});
-            this.verarbeitungToolStripMenuItem.Name = "verarbeitungToolStripMenuItem";
-            this.verarbeitungToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.verarbeitungToolStripMenuItem.Text = "Verarbeitung";
+            this.refiningToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ironsmelterToolStripMenuItem,
+            this.swordsmithToolStripMenuItem,
+            this.armorsmithToolStripMenuItem,
+            this.bowyerToolStripMenuItem});
+            this.refiningToolStripMenuItem.Name = "refiningToolStripMenuItem";
+            this.refiningToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.refiningToolStripMenuItem.Text = "Verarbeitung";
             // 
-            // eisenschmelzeToolStripMenuItem
+            // ironsmelterToolStripMenuItem
             // 
-            this.eisenschmelzeToolStripMenuItem.Name = "eisenschmelzeToolStripMenuItem";
-            this.eisenschmelzeToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.eisenschmelzeToolStripMenuItem.Text = "Eisenschmelze";
+            this.ironsmelterToolStripMenuItem.Name = "ironsmelterToolStripMenuItem";
+            this.ironsmelterToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.ironsmelterToolStripMenuItem.Text = "Eisenschmelze";
             // 
-            // schwertschmiedToolStripMenuItem
+            // swordsmithToolStripMenuItem
             // 
-            this.schwertschmiedToolStripMenuItem.Name = "schwertschmiedToolStripMenuItem";
-            this.schwertschmiedToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.schwertschmiedToolStripMenuItem.Text = "Schwertschmied";
+            this.swordsmithToolStripMenuItem.Name = "swordsmithToolStripMenuItem";
+            this.swordsmithToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.swordsmithToolStripMenuItem.Text = "Schwertschmied";
             // 
-            // rüstungsschmiedToolStripMenuItem
+            // armorsmithToolStripMenuItem
             // 
-            this.rüstungsschmiedToolStripMenuItem.Name = "rüstungsschmiedToolStripMenuItem";
-            this.rüstungsschmiedToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.rüstungsschmiedToolStripMenuItem.Text = "Rüstungsschmied";
+            this.armorsmithToolStripMenuItem.Name = "armorsmithToolStripMenuItem";
+            this.armorsmithToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.armorsmithToolStripMenuItem.Text = "Rüstungsschmied";
             // 
-            // bogenmacheToolStripMenuItem
+            // bowyerToolStripMenuItem
             // 
-            this.bogenmacheToolStripMenuItem.Name = "bogenmacheToolStripMenuItem";
-            this.bogenmacheToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.bogenmacheToolStripMenuItem.Text = "Bogenmache";
+            this.bowyerToolStripMenuItem.Name = "bowyerToolStripMenuItem";
+            this.bowyerToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.bowyerToolStripMenuItem.Text = "Bogenmache";
             // 
-            // spezialToolStripMenuItem
+            // specialToolStripMenuItem
             // 
-            this.spezialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.warenlageToolStripMenuItem,
-            this.straßeToolStripMenuItem,
-            this.kaserneToolStripMenuItem});
-            this.spezialToolStripMenuItem.Name = "spezialToolStripMenuItem";
-            this.spezialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.spezialToolStripMenuItem.Text = "Spezial";
+            this.specialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.storageToolStripMenuItem,
+            this.streetToolStripMenuItem,
+            this.baracksToolStripMenuItem});
+            this.specialToolStripMenuItem.Name = "specialToolStripMenuItem";
+            this.specialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.specialToolStripMenuItem.Text = "Spezial";
             // 
-            // warenlageToolStripMenuItem
+            // storageToolStripMenuItem
             // 
-            this.warenlageToolStripMenuItem.Name = "warenlageToolStripMenuItem";
-            this.warenlageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.warenlageToolStripMenuItem.Text = "Warenlage";
+            this.storageToolStripMenuItem.Name = "storageToolStripMenuItem";
+            this.storageToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.storageToolStripMenuItem.Text = "Warenlage";
             // 
-            // straßeToolStripMenuItem
+            // streetToolStripMenuItem
             // 
-            this.straßeToolStripMenuItem.Name = "straßeToolStripMenuItem";
-            this.straßeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.straßeToolStripMenuItem.Text = "Straße";
+            this.streetToolStripMenuItem.Name = "streetToolStripMenuItem";
+            this.streetToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.streetToolStripMenuItem.Text = "Straße";
             // 
-            // kaserneToolStripMenuItem
+            // baracksToolStripMenuItem
             // 
-            this.kaserneToolStripMenuItem.Name = "kaserneToolStripMenuItem";
-            this.kaserneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.kaserneToolStripMenuItem.Text = "Kaserne";
+            this.baracksToolStripMenuItem.Name = "baracksToolStripMenuItem";
+            this.baracksToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.baracksToolStripMenuItem.Text = "Kaserne";
             // 
-            // ausbauToolStripMenuItem
+            // upgradeToolStripMenuItem
             // 
-            this.ausbauToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dorfToolStripMenuItem,
-            this.stadtToolStripMenuItem,
-            this.großstadtToolStripMenuItem});
-            this.ausbauToolStripMenuItem.Name = "ausbauToolStripMenuItem";
-            this.ausbauToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.ausbauToolStripMenuItem.Text = "Ausbau";
+            this.upgradeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.villageToolStripMenuItem,
+            this.cityToolStripMenuItem,
+            this.megacityToolStripMenuItem});
+            this.upgradeToolStripMenuItem.Name = "upgradeToolStripMenuItem";
+            this.upgradeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.upgradeToolStripMenuItem.Text = "Ausbau";
             // 
-            // dorfToolStripMenuItem
+            // villageToolStripMenuItem
             // 
-            this.dorfToolStripMenuItem.Name = "dorfToolStripMenuItem";
-            this.dorfToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.dorfToolStripMenuItem.Text = "Dorf";
+            this.villageToolStripMenuItem.Name = "villageToolStripMenuItem";
+            this.villageToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.villageToolStripMenuItem.Text = "Dorf";
             // 
-            // stadtToolStripMenuItem
+            // cityToolStripMenuItem
             // 
-            this.stadtToolStripMenuItem.Name = "stadtToolStripMenuItem";
-            this.stadtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.stadtToolStripMenuItem.Text = "Stadt";
+            this.cityToolStripMenuItem.Name = "cityToolStripMenuItem";
+            this.cityToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.cityToolStripMenuItem.Text = "Stadt";
             // 
-            // großstadtToolStripMenuItem
+            // megacityToolStripMenuItem
             // 
-            this.großstadtToolStripMenuItem.Name = "großstadtToolStripMenuItem";
-            this.großstadtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.großstadtToolStripMenuItem.Text = "Großstadt";
+            this.megacityToolStripMenuItem.Name = "megacityToolStripMenuItem";
+            this.megacityToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.megacityToolStripMenuItem.Text = "Großstadt";
             // 
-            // einheitenToolStripMenuItem
+            // unitsToolStripMenuItem
             // 
-            this.einheitenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.siedlerToolStripMenuItem,
+            this.unitsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settlerToolStripMenuItem,
             this.scoutToolStripMenuItem,
-            this.bogenschützeToolStripMenuItem,
-            this.schwertkämpferToolStripMenuItem});
-            this.einheitenToolStripMenuItem.Name = "einheitenToolStripMenuItem";
-            this.einheitenToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.einheitenToolStripMenuItem.Text = "Einheiten";
+            this.bowmanToolStripMenuItem,
+            this.swordsmanToolStripMenuItem});
+            this.unitsToolStripMenuItem.Name = "unitsToolStripMenuItem";
+            this.unitsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.unitsToolStripMenuItem.Text = "Einheiten";
             // 
-            // siedlerToolStripMenuItem
+            // settlerToolStripMenuItem
             // 
-            this.siedlerToolStripMenuItem.Name = "siedlerToolStripMenuItem";
-            this.siedlerToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.siedlerToolStripMenuItem.Text = "Siedler";
+            this.settlerToolStripMenuItem.Name = "settlerToolStripMenuItem";
+            this.settlerToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.settlerToolStripMenuItem.Text = "Siedler";
             // 
             // scoutToolStripMenuItem
             // 
@@ -286,51 +284,73 @@
             this.scoutToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.scoutToolStripMenuItem.Text = "Scout";
             // 
-            // bogenschützeToolStripMenuItem
+            // bowmanToolStripMenuItem
             // 
-            this.bogenschützeToolStripMenuItem.Name = "bogenschützeToolStripMenuItem";
-            this.bogenschützeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.bogenschützeToolStripMenuItem.Text = "Bogenschütze";
+            this.bowmanToolStripMenuItem.Name = "bowmanToolStripMenuItem";
+            this.bowmanToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.bowmanToolStripMenuItem.Text = "Bogenschütze";
             // 
-            // schwertkämpferToolStripMenuItem
+            // swordsmanToolStripMenuItem
             // 
-            this.schwertkämpferToolStripMenuItem.Name = "schwertkämpferToolStripMenuItem";
-            this.schwertkämpferToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.schwertkämpferToolStripMenuItem.Text = "Schwertkämpfer";
+            this.swordsmanToolStripMenuItem.Name = "swordsmanToolStripMenuItem";
+            this.swordsmanToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.swordsmanToolStripMenuItem.Text = "Schwertkämpfer";
             // 
-            // spielerToolStripMenuItem
+            // playerToolStripMenuItem
             // 
-            this.spielerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.handelToolStripMenuItem,
-            this.handkartenToolStripMenuItem,
-            this.zugBeendenToolStripMenuItem});
-            this.spielerToolStripMenuItem.Name = "spielerToolStripMenuItem";
-            this.spielerToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.spielerToolStripMenuItem.Text = "Spieler";
+            this.playerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tradeToolStripMenuItem,
+            this.endturnToolStripMenuItem,
+            this.handToolStripMenuItem});
+            this.playerToolStripMenuItem.Name = "playerToolStripMenuItem";
+            this.playerToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.playerToolStripMenuItem.Text = "Spieler";
             // 
-            // handkartenToolStripMenuItem
+            // tradeToolStripMenuItem
             // 
-            this.handkartenToolStripMenuItem.Name = "handkartenToolStripMenuItem";
-            this.handkartenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.handkartenToolStripMenuItem.Text = "Handkarten";
+            this.tradeToolStripMenuItem.Name = "tradeToolStripMenuItem";
+            this.tradeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tradeToolStripMenuItem.Text = "Handel";
+            this.tradeToolStripMenuItem.Click += new System.EventHandler(this.tradeToolStripMenuItem_Click);
             // 
-            // zugBeendenToolStripMenuItem
+            // endturnToolStripMenuItem
             // 
-            this.zugBeendenToolStripMenuItem.Name = "zugBeendenToolStripMenuItem";
-            this.zugBeendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.zugBeendenToolStripMenuItem.Text = "Zug beenden";
+            this.endturnToolStripMenuItem.Name = "endturnToolStripMenuItem";
+            this.endturnToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.endturnToolStripMenuItem.Text = "Zug beenden";
+            this.endturnToolStripMenuItem.Click += new System.EventHandler(this.endturnToolStripMenuItem_Click);
             // 
-            // handelToolStripMenuItem
+            // handToolStripMenuItem
             // 
-            this.handelToolStripMenuItem.Name = "handelToolStripMenuItem";
-            this.handelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.handelToolStripMenuItem.Text = "Handel";
+            this.handToolStripMenuItem.Name = "handToolStripMenuItem";
+            this.handToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.handToolStripMenuItem.Text = "Handkarten";
+            this.handToolStripMenuItem.Click += new System.EventHandler(this.handToolStripMenuItem_Click);
+            // 
+            // turnLabel
+            // 
+            this.turnLabel.AutoSize = true;
+            this.turnLabel.Location = new System.Drawing.Point(433, 5);
+            this.turnLabel.Name = "turnLabel";
+            this.turnLabel.Size = new System.Drawing.Size(63, 13);
+            this.turnLabel.TabIndex = 3;
+            this.turnLabel.Text = "Zuganzeige";
+            // 
+            // activePlayerLabel
+            // 
+            this.activePlayerLabel.AutoSize = true;
+            this.activePlayerLabel.Location = new System.Drawing.Point(380, 5);
+            this.activePlayerLabel.Name = "activePlayerLabel";
+            this.activePlayerLabel.Size = new System.Drawing.Size(39, 13);
+            this.activePlayerLabel.TabIndex = 4;
+            this.activePlayerLabel.Text = "Spieler";
             // 
             // BoardBuilder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 339);
+            this.ClientSize = new System.Drawing.Size(508, 339);
+            this.Controls.Add(this.activePlayerLabel);
             this.Controls.Add(this.turnLabel);
             this.Controls.Add(this.GameMenu);
             this.MainMenuStrip = this.GameMenu;
@@ -351,40 +371,41 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip GameMenu;
-        private System.Windows.Forms.ToolStripMenuItem spielToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generiereWeltToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateWorldToolStripMenuItem;
         private System.Windows.Forms.Label turnLabel;
-        private System.Windows.Forms.ToolStripMenuItem baumenuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem produktionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem holzfällerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem steinmetzToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem obstplantageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem jägerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buildmenuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem woodcutterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stonemasonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fruitfarmToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hunterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fischerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kohlemineToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eisenmineToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verarbeitungToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eisenschmelzeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem schwertschmiedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rüstungsschmiedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bogenmacheToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem spezialToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem warenlageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem straßeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kaserneToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ausbauToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dorfToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stadtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem großstadtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem einheitenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem siedlerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem coalmineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ironmineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refiningToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ironsmelterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem swordsmithToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem armorsmithToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bowyerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem specialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem storageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem streetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem baracksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem upgradeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem villageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem megacityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem unitsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settlerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bogenschützeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem schwertkämpferToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem spielerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem handelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem handkartenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zugBeendenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bowmanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem swordsmanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tradeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem endturnToolStripMenuItem;
+        private System.Windows.Forms.Label activePlayerLabel;
+        private System.Windows.Forms.ToolStripMenuItem handToolStripMenuItem;
 
     }
 }

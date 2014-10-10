@@ -32,5 +32,26 @@ namespace BoardBuilders.BoardForms
             return rowTextBox.Text;
         }
 
+        //returns all involved player names seperated by ':' or noplayer1 if no name is entered
+        public string getPlayers()
+        {
+            string players = "";
+            if(player1TextBox.Text.Equals("") || player1TextBox.Text.Equals("Spielername"))
+                return players;
+            else
+                players += player1TextBox.Text;
+            
+            if(! ( player2TextBox.Text.Equals("") || player2TextBox.Text.Equals("Spielername")) )
+                players += ":"+player2TextBox;
+
+            if (!(player3TextBox.Text.Equals("") || player3TextBox.Text.Equals("Spielername")))
+                players += ":" + player3TextBox;
+
+            if (!(player4TextBox.Text.Equals("") || player4TextBox.Text.Equals("Spielername")))
+                players += ":" + player4TextBox;
+
+            return players;
+        }
+
     }
 }

@@ -24,6 +24,11 @@ namespace BoardBuilders
             return type;
         }
 
+        public override string ToString()
+        {
+            return type.ToString();
+        }
+
         public override bool Equals(object obj)
         {
             return ((Card)obj).getType() == this.type;
