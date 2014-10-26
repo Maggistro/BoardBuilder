@@ -68,8 +68,6 @@ namespace BoardBuilders.BoardForms
             this.hoverForm.Location = this.Location; //TODO: relative offset or recalculate complete position
         }
 
-
-
         //generate game board with x,y size
         private void generateBoard(int x, int y, List<string> playerNames)
         {
@@ -107,7 +105,7 @@ namespace BoardBuilders.BoardForms
                     mainField[col, line].Name = "fieldButton:" + col + ":" + line + ":"+posX+":"+posY;
                     mainField[col, line].Click += new System.EventHandler(this.FieldButton_Click);
                     mainField[col, line].MouseHover += new System.EventHandler(this.FieldButton_MouseHover);
-                    mainField[col, line].MouseHover += new System.EventHandler(this.FieldButton_MouseLeave);
+                    mainField[col, line].MouseLeave += new System.EventHandler(this.FieldButton_MouseLeave);
                     mainField[col, line].initFieldButton();
                     this.Controls.Add(mainField[col, line]);
                     posX += 51;
@@ -144,6 +142,7 @@ namespace BoardBuilders.BoardForms
             }
         }
 
+        //checks if underlying fields match the required field for building
         private bool checkFieldTypeForBuild()
         {
             if (tempBuilding.getBuildPlace().Count == 1)
@@ -152,10 +151,14 @@ namespace BoardBuilders.BoardForms
                 return false;
         }
 
-       /**
-       * HANDLERS FOR BUTTONS, MENU ETC.
-       * 
-       */
+        /**
+        * HANDLERS FOR BUTTON MOUSE EVENTS
+        * 
+        */
+
+        #region BUTTONMOUSEEVENTS
+        //gets a mouseposition on x,y and checks 
+
 
         //handles click on hoverform
         void hoverForm_Click(object sender, EventArgs e)
@@ -193,8 +196,8 @@ namespace BoardBuilders.BoardForms
         //handler for disbanding hover information
         void FieldButton_MouseLeave(object sender, EventArgs e)
         {
-            //infoLabel.Hide();
-            ((FieldButton)sender).ForeColor = Color.Transparent;
+            infoLabel.Hide();
+            //((FieldButton)sender).ForeColor = Color.Transparent;
         }
         
         //handler for showing hover information
@@ -219,12 +222,22 @@ namespace BoardBuilders.BoardForms
                 Point hoverPoint = this.Location;
                 hoverPoint.Offset(new Point(((FieldButton)sender).drawX + borderWidth, ((FieldButton)sender).drawY + titleBarHeight));
                 hoverForm.Location = hoverPoint;
+                hoverForm.setUp(((FieldButton)sender).x % 2 == 0);
                 hoverPosition[0] = ((FieldButton)sender).x;
                 hoverPosition[1] = ((FieldButton)sender).y;
+
+
             }
         }
 
+        #endregion
 
+        /**
+        * HANDLERS FOR GAME MENU
+        * 
+        */
+
+        #region GAMEMENUHANDLER
         //handler for showing gamestart menu
         private void generiereWeltToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -267,6 +280,7 @@ namespace BoardBuilders.BoardForms
             dialog.Dispose();
 
         }
+        #endregion 
 
         /**
          * HANDLER FOR PLAYER MENU
@@ -311,7 +325,6 @@ namespace BoardBuilders.BoardForms
         private void woodcutterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tempBuilding = new Woodcutter();
-           
             tempImage = BoardBuilders.Properties.Resources.woodcutter;
             prepareBuild();
         }
@@ -319,6 +332,7 @@ namespace BoardBuilders.BoardForms
         private void stonemasonToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             tempBuilding = new Stonemason();
+            tempImage = BoardBuilders.Properties.Resources.stonemason;
             prepareBuild();
         }
 
@@ -331,6 +345,7 @@ namespace BoardBuilders.BoardForms
         private void hunterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tempBuilding = new Hunter();
+            tempImage = BoardBuilders.Properties.Resources.hunter;
             prepareBuild();
         }
 

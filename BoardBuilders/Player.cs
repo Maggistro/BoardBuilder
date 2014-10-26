@@ -18,6 +18,24 @@ namespace BoardBuilders
         {
             hand.Add(new Card(CARDTYPE.WOOD));
             hand.Add(new Card(CARDTYPE.WOOD));
+            hand.Add(new Card(CARDTYPE.WOOD));
+            hand.Add(new Card(CARDTYPE.WOOD));
+            hand.Add(new Card(CARDTYPE.WOOD));
+            hand.Add(new Card(CARDTYPE.WOOD));
+            hand.Add(new Card(CARDTYPE.WOOD));
+            hand.Add(new Card(CARDTYPE.WOOD));
+            hand.Add(new Card(CARDTYPE.WOOD));
+            hand.Add(new Card(CARDTYPE.WOOD));
+            hand.Add(new Card(CARDTYPE.STONE));
+            hand.Add(new Card(CARDTYPE.STONE));
+            hand.Add(new Card(CARDTYPE.STONE));
+            hand.Add(new Card(CARDTYPE.STONE));
+            hand.Add(new Card(CARDTYPE.STONE));
+            hand.Add(new Card(CARDTYPE.STONE));
+            hand.Add(new Card(CARDTYPE.STONE));
+            hand.Add(new Card(CARDTYPE.STONE));
+            hand.Add(new Card(CARDTYPE.STONE));
+            hand.Add(new Card(CARDTYPE.STONE));
             name = newName;
         }
 

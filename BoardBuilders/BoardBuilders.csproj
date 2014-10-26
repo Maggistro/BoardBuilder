@@ -137,8 +137,9 @@
     <None Include="assets\Field.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\hunter.bmp" />
+    <Content Include="assets\stonemason.bmp" />
     <Content Include="assets\woodcutter.bmp" />
-    <Content Include="assets\woodcutter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,6 +16,7 @@ namespace BoardBuilders
         private List<Player> players= new List<Player>();
         private int activePlayer;
         private int turn = 0;
+        public static int MAXBUILDINGSIZE = 31;
        
 
         public Game(int[] sizes, List<string> newPlayers)
