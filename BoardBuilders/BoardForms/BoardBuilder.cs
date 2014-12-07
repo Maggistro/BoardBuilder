@@ -339,6 +339,7 @@ namespace BoardBuilders.BoardForms
         private void fruitfarmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tempBuilding = new Fruitfarm();
+            tempImage = BoardBuilders.Properties.Resources.fruitfarm;
             prepareBuild();
         }
 
@@ -358,6 +359,7 @@ namespace BoardBuilders.BoardForms
         private void coalmineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tempBuilding = new Coalmine();
+            tempImage = BoardBuilders.Properties.Resources.coalmine;
             prepareBuild();
         }
 
