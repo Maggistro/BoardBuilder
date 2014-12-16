@@ -27,7 +27,6 @@ namespace BoardBuilders
                 players.Add(new Player(name));
             }
 
-            rand = new Random(); //init random object
             boardsize = sizes; //set boardsize
             generateBoard(); //generate board
         }   
@@ -35,6 +34,8 @@ namespace BoardBuilders
         //randomly fill board with Fields
         void generateBoard()
         {
+
+            rand = new Random(); //init random object
             board = new Field[boardsize[0],boardsize[1]];
             for (int posX = 0; posX < boardsize[0]; posX++)
             {

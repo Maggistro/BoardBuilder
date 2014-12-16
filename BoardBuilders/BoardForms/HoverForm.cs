@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace BoardBuilders.BoardForms
 {
@@ -20,6 +21,7 @@ namespace BoardBuilders.BoardForms
         private int size = 0;
         private bool up = false;
         private System.Drawing.Drawing2D.Matrix rotMatrix;
+        private System.Drawing.Point savedLocation = new Point(0,0);
         HOVERMOUSEPOSITION lastposition = HOVERMOUSEPOSITION.CENTER;
 
         public HoverForm()
@@ -39,6 +41,7 @@ namespace BoardBuilders.BoardForms
                 f.Name = "extraButton_" + i;
                 f.Size = new Size(fieldButton1.Width, fieldButton1.Height);
                 f.Click += fieldButton1_Click;
+                f.MouseMove += HoverForm_MouseMove;
                 this.extraButtons.Add(f);
                 this.Controls.Add(f);
             }
@@ -50,11 +53,24 @@ namespace BoardBuilders.BoardForms
         void HoverForm_MouseMove(object sender, MouseEventArgs e)
         {
                 HOVERMOUSEPOSITION position = initExtraButtons(e.Location.X, e.Location.Y);
-                if(position!=lastposition) //if new area reached
+                Debug.WriteLine("position "+position);
+                if (position != lastposition && position!=HOVERMOUSEPOSITION.CENTER)
+                { //if new area reached
                     setExtraButtonPositon(position);
+                    lastposition = position;
+                }
         }
 
-  
+        public void updateLocation(System.Drawing.Point newLocation)
+        {
+
+            if (newLocation != savedLocation)
+            {
+                this.Location = newLocation;
+                savedLocation = newLocation;
+            }
+        }
+
 
         void fieldButton1_Click(object sender, EventArgs e)
         {
@@ -139,29 +155,36 @@ namespace BoardBuilders.BoardForms
         private void setExtraButtonPositon(HOVERMOUSEPOSITION position)
         {
             System.Drawing.Drawing2D.GraphicsPath shape = (System.Drawing.Drawing2D.GraphicsPath)fieldButton1.getShape().Clone();
+            System.Drawing.Point tPoint = savedLocation;
             
             switch (position)
             {
                 //first check cases with 1 additional button
-                case HOVERMOUSEPOSITION.BOTTOM: 
+                case HOVERMOUSEPOSITION.BOTTOM:
+                    this.Location = tPoint;
                     shape.Transform(rotMatrix); //rotate
                     fieldButton1.Location = new Point(0, 0);
                     extraButtons.ElementAt(0).setShape(shape);
                     extraButtons.ElementAt(0).Location = new Point(0, 87);
                     break;
                 case HOVERMOUSEPOSITION.TOP:
-                    shape.Transform(rotMatrix); //rotate
-                    fieldButton1.Location = new Point(0, 87);
-                    extraButtons.ElementAt(0).setShape(shape);
-                    extraButtons.ElementAt(0).Location = new Point(0, 0);
+                    tPoint.Offset(new Point(0, -87));
+                    this.Location = tPoint;
+                    shape.Transform(rotMatrix); //rotate secondary shape
+                    fieldButton1.Location = new Point(0, 87); //shift mainbutton down
+                    extraButtons.ElementAt(0).setShape(shape); //set new shape for secondary button
+                    extraButtons.ElementAt(0).Location = new Point(0, 0); //set secondary button to top
                     break;
                 case HOVERMOUSEPOSITION.RIGHT:
+                    this.Location = tPoint;
                     shape.Transform(rotMatrix); //rotate
                     fieldButton1.Location = new Point(0, 0);
                     extraButtons.ElementAt(0).setShape(shape);
                     extraButtons.ElementAt(0).Location = new Point(50, 0);
                     break;
                 case HOVERMOUSEPOSITION.LEFT:
+                    tPoint.Offset(new Point(-50, 0));
+                    this.Location = tPoint;
                     shape.Transform(rotMatrix); //rotate
                     fieldButton1.Location = new Point(50, 0);
                     extraButtons.ElementAt(0).setShape(shape);

@@ -221,12 +221,10 @@ namespace BoardBuilders.BoardForms
                 hoverForm.setShape(((FieldButton)sender).getShape());
                 Point hoverPoint = this.Location;
                 hoverPoint.Offset(new Point(((FieldButton)sender).drawX + borderWidth, ((FieldButton)sender).drawY + titleBarHeight));
-                hoverForm.Location = hoverPoint;
-                hoverForm.setUp(((FieldButton)sender).x % 2 == 0);
+                hoverForm.setUp((((FieldButton)sender).x + ((FieldButton)sender).y) % 2 == 0);
+                hoverForm.updateLocation(hoverPoint);
                 hoverPosition[0] = ((FieldButton)sender).x;
                 hoverPosition[1] = ((FieldButton)sender).y;
-
-
             }
         }
 
