@@ -95,6 +95,11 @@
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Units\Bowman.cs" />
     <Compile Include="Units\Scout.cs" />
     <Compile Include="Units\Settler.cs" />
@@ -111,14 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\DataSources\Board.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -137,11 +137,13 @@
     <None Include="assets\Field.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\fischer.bmp" />
     <Content Include="assets\hunter.bmp" />
+    <Content Include="assets\ironmine.bmp" />
     <Content Include="assets\stonemason.bmp" />
     <Content Include="assets\woodcutter.bmp" />
-    <Content Include="BoardForms\coalmine.bmp" />
-    <Content Include="BoardForms\fruitfarm.bmp" />
+    <Content Include="assets\coalmine.bmp" />
+    <Content Include="assets\fruitfarm.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -22,7 +22,7 @@ namespace BoardBuilders.BoardForms
         private bool up = false;
         private System.Drawing.Drawing2D.Matrix rotMatrix;
         private System.Drawing.Point savedLocation = new Point(0,0);
-        HOVERMOUSEPOSITION lastposition = HOVERMOUSEPOSITION.CENTER;
+        private HOVERMOUSEPOSITION lastposition = HOVERMOUSEPOSITION.CENTER;
 
         public HoverForm()
         {
@@ -81,6 +81,11 @@ namespace BoardBuilders.BoardForms
         {
             this.fieldButton1.setShape(newShape);
             Invalidate();
+        }
+
+        public HOVERMOUSEPOSITION getHoverPosition()
+        {
+            return lastposition;
         }
 
         public void setSize(int p)

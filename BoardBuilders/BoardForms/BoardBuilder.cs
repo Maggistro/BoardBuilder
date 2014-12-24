@@ -145,8 +145,52 @@ namespace BoardBuilders.BoardForms
         //checks if underlying fields match the required field for building
         private bool checkFieldTypeForBuild()
         {
-            if (tempBuilding.getBuildPlace().Count == 1)
-                return mainBoard.getField(hoverPosition[0], hoverPosition[1]).type == tempBuilding.getBuildPlace().ElementAt(0);
+            if (tempBuilding.getBuildPlace().Count == 1){
+                if(!(mainBoard.getField(hoverPosition[0], hoverPosition[1]).type == tempBuilding.getBuildPlace().ElementAt(0))){
+                    MessageBox.Show(this,"Wrong field selected. Need "+tempBuilding.getBuildPlace().ElementAt(0).ToString()); //inform about error
+                    return false;
+                }
+                return true;
+            }
+            else if (tempBuilding.getBuildPlace().Count == 2)
+            {
+                List<FIELDTYPE> found = new List<FIELDTYPE>();
+                found.Add(mainBoard.getField(hoverPosition[0], hoverPosition[1]).type);
+                switch(hoverForm.getHoverPosition())
+                {
+                    case HOVERMOUSEPOSITION.CENTER:
+                        break;
+                    case HOVERMOUSEPOSITION.BOTTOM:
+                        if(hoverPosition[1]<mainBoard.getBoardSize()[1])
+                        found.Add(mainBoard.getField(hoverPosition[0], hoverPosition[1]+1).type);
+                        break;
+                    case HOVERMOUSEPOSITION.TOP:
+                        if(hoverPosition[1]>0)
+                            found.Add(mainBoard.getField(hoverPosition[0], hoverPosition[1]-1).type);
+                        break;
+                    case HOVERMOUSEPOSITION.LEFT:
+                        if (hoverPosition[0] > 0)
+                            found.Add(mainBoard.getField(hoverPosition[0]-1, hoverPosition[1]).type);
+                        break;
+                    case HOVERMOUSEPOSITION.RIGHT:
+                        if (hoverPosition[0] < mainBoard.getBoardSize()[0])
+                            found.Add(mainBoard.getField(hoverPosition[0]+1, hoverPosition[1]).type);
+                        break;
+                    case HOVERMOUSEPOSITION.DOWN:
+                        break;
+                }
+                if(!found.Contains(tempBuilding.getBuildPlace().ElementAt(0))){ //check first
+                    MessageBox.Show(this,"Wrong field selected. Need "+tempBuilding.getBuildPlace().ElementAt(0).ToString()); //inform about error
+                    return false;
+                }
+
+                if(!found.Contains(tempBuilding.getBuildPlace().ElementAt(1))){ //check second
+                    MessageBox.Show(this,"Wrong field selected. Need "+tempBuilding.getBuildPlace().ElementAt(1).ToString()); //inform about error
+                    return false;
+                }
+                return true;
+                    
+            }
             else
                 return false;
         }
@@ -175,7 +219,6 @@ namespace BoardBuilders.BoardForms
                 }
                 else
                 {
-                    MessageBox.Show(this,"Wrong field selected. Need "+tempBuilding.getBuildPlace().ElementAt(0).ToString()); //inform about error
                     mainBoard.getActivePlayer().addCard(new List<Card>(tempBuilding.getBuildCost())); //reimburse player for payed cost
                 }
                 status = FIELDSTATUS.NORMAL;
@@ -351,6 +394,7 @@ namespace BoardBuilders.BoardForms
         private void fischerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tempBuilding = new Fischinghut();
+            tempImage = BoardBuilders.Properties.Resources.fischer;
             prepareBuild();
         }
 
@@ -364,6 +408,7 @@ namespace BoardBuilders.BoardForms
         private void ironmineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tempBuilding = new Ironmine();
+            tempImage = BoardBuilders.Properties.Resources.ironmine;
             prepareBuild();
         }
 
