@@ -22,6 +22,16 @@ namespace BoardBuilders.Units
             recruitCostList.Add(new Card(CARDTYPE.STONE));
             recruitCostList.Add(new Card(CARDTYPE.STONE));
             recruitCostList.Add(new Card(CARDTYPE.STONE));
+            
+            //set allowed spawns
+            spawnPlace.Add(FIELDTYPE.GRASS);
+            spawnPlace.Add(FIELDTYPE.CITY);
+            spawnPlace.Add(FIELDTYPE.COALMOUNTAIN);
+            spawnPlace.Add(FIELDTYPE.IRONMOUNTAIN);
+            spawnPlace.Add(FIELDTYPE.MEGACITY);
+            spawnPlace.Add(FIELDTYPE.MOUNTAIN);
+            spawnPlace.Add(FIELDTYPE.WOODS);
+            spawnPlace.Add(FIELDTYPE.SETTLEMENT);
 
             //set movement, attack and defense points
             movementPoints = 1;

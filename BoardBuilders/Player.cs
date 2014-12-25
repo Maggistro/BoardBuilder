@@ -36,6 +36,11 @@ namespace BoardBuilders
             hand.Add(new Card(CARDTYPE.STONE));
             hand.Add(new Card(CARDTYPE.STONE));
             hand.Add(new Card(CARDTYPE.STONE));
+            hand.Add(new Card(CARDTYPE.FOOD));
+            hand.Add(new Card(CARDTYPE.FOOD));
+            hand.Add(new Card(CARDTYPE.FOOD));
+            hand.Add(new Card(CARDTYPE.FOOD));
+            hand.Add(new Card(CARDTYPE.FOOD));
             name = newName;
         }
 
@@ -81,6 +86,13 @@ namespace BoardBuilders
         public void addCard(Card newCard)
         {
             hand.Add(newCard);
+        }
+
+        //adds one unit
+
+        public void addUnit(Unit newUnit)
+        {
+            units.Add(newUnit);
         }
 
         //adds a range of cards

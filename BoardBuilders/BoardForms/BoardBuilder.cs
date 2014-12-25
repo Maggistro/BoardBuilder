@@ -1,4 +1,5 @@
 ﻿using BoardBuilders.Buildings;
+using BoardBuilders.Units;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace BoardBuilders.BoardForms
 {
     public enum FIELDSTATUS
     {
-        NORMAL,BUILDING
+        NORMAL,BUILDING,RECRUITING
     }
 
     public partial class BoardBuilder : Form
@@ -36,12 +37,17 @@ namespace BoardBuilders.BoardForms
 
         //temporary Building for placing
         Building tempBuilding;
-        Image tempImage;
 
+        //temporary Unit for placing
+        Unit tempUnit;
+
+        //temporary image for drawwing to-be-placed class
+        Image tempImage;
         public BoardBuilder()
         {
             this.status = FIELDSTATUS.NORMAL;
             this.tempBuilding = new Building();
+            this.tempUnit = new Unit();
             
             //set initial info label parameters
             this.infoLabel.AutoSize = true;
@@ -142,6 +148,21 @@ namespace BoardBuilders.BoardForms
             }
         }
 
+        private void prepareUnit()
+        {
+            //check for building cost
+            if (mainBoard.getActivePlayer().pay(tempUnit.getRecruitmentCost()))
+            {
+                status = FIELDSTATUS.RECRUITING;
+                hoverForm.setSize(tempUnit.getSpawningPlace().Count);
+                hoverForm.Show(this);
+            }
+            else
+            {
+                MessageBox.Show(this, "Not enough ressources. Need " + tempUnit.getRecruitmentCost().ToString()); //not enough cards to pay
+            }
+        }
+
         //checks if underlying fields match the required field for building
         private bool checkFieldTypeForBuild()
         {
@@ -195,6 +216,17 @@ namespace BoardBuilders.BoardForms
                 return false;
         }
 
+        //check if underlying field allows unit spawning
+        private bool checkFieldTypeForSpawn()
+        {
+            if (!tempUnit.getSpawningPlace().Contains(mainBoard.getField(hoverPosition[0], hoverPosition[1]).type))
+            {
+                MessageBox.Show(this, "Wrong field selected. Need " + tempUnit.getSpawningPlace().ElementAt(0).ToString()); //inform about error
+                return false;
+            }
+            return true;
+        }
+
         /**
         * HANDLERS FOR BUTTON MOUSE EVENTS
         * 
@@ -220,6 +252,23 @@ namespace BoardBuilders.BoardForms
                 else
                 {
                     mainBoard.getActivePlayer().addCard(new List<Card>(tempBuilding.getBuildCost())); //reimburse player for payed cost
+                }
+                status = FIELDSTATUS.NORMAL;
+                hoverForm.Hide();
+            }
+            else if (status == FIELDSTATUS.RECRUITING)
+            {
+                //check for building place
+                if (checkFieldTypeForSpawn())
+                {
+                    tempUnit.rectruit(hoverPosition[0], hoverPosition[1]); //spawn unit
+                    mainBoard.getField(hoverPosition[0], hoverPosition[1]).unit = tempUnit; //add to field
+                    mainBoard.getActivePlayer().addUnit(tempUnit); //add to players units
+                    mainField[hoverPosition[0], hoverPosition[1]].setUnitImage(tempImage);
+                }
+                else
+                {
+                    mainBoard.getActivePlayer().addCard(new List<Card>(tempUnit.getRecruitmentCost())); //reimburse player for payed cost
                 }
                 status = FIELDSTATUS.NORMAL;
                 hoverForm.Hide();
@@ -257,7 +306,7 @@ namespace BoardBuilders.BoardForms
                 infoLabel.Location = new Point(((FieldButton)sender).drawCenterX, ((FieldButton)sender).drawCenterY);
                 infoLabel.Show();
             }
-            else if (status == FIELDSTATUS.BUILDING) //if player wants to build, highlight field with hoverForm
+            else if (status == FIELDSTATUS.BUILDING || status == FIELDSTATUS.RECRUITING) //if player wants to build, highlight field with hoverForm
             {
                 int borderWidth = (this.Width - this.ClientSize.Width) / 2;
                 int titleBarHeight = this.Height - this.ClientSize.Height - borderWidth;
@@ -415,6 +464,37 @@ namespace BoardBuilders.BoardForms
         #endregion
 
 
+        /**
+         * HANDLER FOR UNIT MENU
+         * 
+         */
+
+        #region UNITMENUHANDLER
+        
+        private void settlerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tempUnit = new Settler();
+            tempImage = BoardBuilders.Properties.Resources.settler;
+            prepareUnit();
+        }
+
+        private void scoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bowmanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void swordsmanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+        
+  
     }
 
 

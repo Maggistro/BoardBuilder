@@ -140,6 +140,7 @@
     <Content Include="assets\fischer.bmp" />
     <Content Include="assets\hunter.bmp" />
     <Content Include="assets\ironmine.bmp" />
+    <Content Include="assets\settler.bmp" />
     <Content Include="assets\stonemason.bmp" />
     <Content Include="assets\woodcutter.bmp" />
     <Content Include="assets\coalmine.bmp" />

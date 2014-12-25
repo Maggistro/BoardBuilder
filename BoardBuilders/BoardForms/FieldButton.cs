@@ -113,10 +113,20 @@ namespace BoardBuilders.BoardForms
             Bitmap temp = new Bitmap(buildingImage);
             temp.MakeTransparent(Color.White);
             this.building = new Bitmap(temp,imageSize);
-            //this.BackgroundImage = building;
-            //this.BackgroundImageLayout = ImageLayout.Center;
             g = this.CreateGraphics();
             g.DrawImage(building, triangle[1].X/4, (triangle[1].Y+triangle[2].Y)/5);
+            g.Flush();
+        }
+
+        //set unit Image
+        public void setUnitImage(Image unitImage)
+        {
+            //position for the image to be drawn relative to the fieldbutton
+            Bitmap temp = new Bitmap(unitImage);
+            temp.MakeTransparent(Color.White);
+            this.unit = new Bitmap(temp, imageSize);
+            g = this.CreateGraphics();
+            g.DrawImage(unit, triangle[1].X / 4, (triangle[1].Y + triangle[2].Y) / 5);
             g.Flush();
         }
 

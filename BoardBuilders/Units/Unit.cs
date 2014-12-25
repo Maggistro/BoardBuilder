@@ -16,6 +16,7 @@ namespace BoardBuilders
         //init all unit components
         protected List<Card> recruitCostList = new List<Card>();
         protected List<UNITACTION> allowedActions = new List<UNITACTION>();
+        protected List<FIELDTYPE> spawnPlace = new List<FIELDTYPE>();
         protected int movementPoints = 0;
         protected int attackPoints = 0;
         protected int defensePoints = 0;
@@ -24,15 +25,20 @@ namespace BoardBuilders
         protected string name = "";
 
 
-        public void rectruit(int[] newPos)
+        public void rectruit(int x, int y)
         {
-            position = newPos;
+            position = new int[2] { x, y };
         }
 
         //return costs for recruiting
-        public List<Card> getRecruitCost()
+        public List<Card> getRecruitmentCost()
         {
             return recruitCostList;
+        }
+
+        public List<FIELDTYPE> getSpawningPlace()
+        {
+            return spawnPlace;
         }
 
         //return movement points

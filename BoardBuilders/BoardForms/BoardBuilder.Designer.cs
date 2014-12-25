@@ -277,24 +277,28 @@
             this.settlerToolStripMenuItem.Name = "settlerToolStripMenuItem";
             this.settlerToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.settlerToolStripMenuItem.Text = "Siedler";
+            this.settlerToolStripMenuItem.Click += new System.EventHandler(this.settlerToolStripMenuItem_Click);
             // 
             // scoutToolStripMenuItem
             // 
             this.scoutToolStripMenuItem.Name = "scoutToolStripMenuItem";
             this.scoutToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.scoutToolStripMenuItem.Text = "Scout";
+            this.scoutToolStripMenuItem.Click += new System.EventHandler(this.scoutToolStripMenuItem_Click);
             // 
             // bowmanToolStripMenuItem
             // 
             this.bowmanToolStripMenuItem.Name = "bowmanToolStripMenuItem";
             this.bowmanToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.bowmanToolStripMenuItem.Text = "Bogenschütze";
+            this.bowmanToolStripMenuItem.Click += new System.EventHandler(this.bowmanToolStripMenuItem_Click);
             // 
             // swordsmanToolStripMenuItem
             // 
             this.swordsmanToolStripMenuItem.Name = "swordsmanToolStripMenuItem";
             this.swordsmanToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.swordsmanToolStripMenuItem.Text = "Schwertkämpfer";
+            this.swordsmanToolStripMenuItem.Click += new System.EventHandler(this.swordsmanToolStripMenuItem_Click);
             // 
             // playerToolStripMenuItem
             // 
@@ -309,21 +313,21 @@
             // tradeToolStripMenuItem
             // 
             this.tradeToolStripMenuItem.Name = "tradeToolStripMenuItem";
-            this.tradeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tradeToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.tradeToolStripMenuItem.Text = "Handel";
             this.tradeToolStripMenuItem.Click += new System.EventHandler(this.tradeToolStripMenuItem_Click);
             // 
             // endturnToolStripMenuItem
             // 
             this.endturnToolStripMenuItem.Name = "endturnToolStripMenuItem";
-            this.endturnToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.endturnToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.endturnToolStripMenuItem.Text = "Zug beenden";
             this.endturnToolStripMenuItem.Click += new System.EventHandler(this.endturnToolStripMenuItem_Click);
             // 
             // handToolStripMenuItem
             // 
             this.handToolStripMenuItem.Name = "handToolStripMenuItem";
-            this.handToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.handToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.handToolStripMenuItem.Text = "Handkarten";
             this.handToolStripMenuItem.Click += new System.EventHandler(this.handToolStripMenuItem_Click);
             // 
