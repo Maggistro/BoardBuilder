@@ -77,7 +77,7 @@
             this.playerToolStripMenuItem});
             this.GameMenu.Location = new System.Drawing.Point(0, 0);
             this.GameMenu.Name = "GameMenu";
-            this.GameMenu.Size = new System.Drawing.Size(508, 24);
+            this.GameMenu.Size = new System.Drawing.Size(570, 24);
             this.GameMenu.TabIndex = 1;
             this.GameMenu.Text = "menuStrip1";
             // 
@@ -118,55 +118,55 @@
             this.coalmineToolStripMenuItem,
             this.ironmineToolStripMenuItem});
             this.productionToolStripMenuItem.Name = "productionToolStripMenuItem";
-            this.productionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productionToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.productionToolStripMenuItem.Text = "Produktion";
             // 
             // woodcutterToolStripMenuItem
             // 
             this.woodcutterToolStripMenuItem.Name = "woodcutterToolStripMenuItem";
-            this.woodcutterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.woodcutterToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.woodcutterToolStripMenuItem.Text = "Holzfäller";
             this.woodcutterToolStripMenuItem.Click += new System.EventHandler(this.woodcutterToolStripMenuItem_Click);
             // 
             // stonemasonToolStripMenuItem
             // 
             this.stonemasonToolStripMenuItem.Name = "stonemasonToolStripMenuItem";
-            this.stonemasonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stonemasonToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.stonemasonToolStripMenuItem.Text = "Steinmetz";
             this.stonemasonToolStripMenuItem.Click += new System.EventHandler(this.stonemasonToolStripMenuItem_Click);
             // 
             // fruitfarmToolStripMenuItem
             // 
             this.fruitfarmToolStripMenuItem.Name = "fruitfarmToolStripMenuItem";
-            this.fruitfarmToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fruitfarmToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.fruitfarmToolStripMenuItem.Text = "Obstplantage";
             this.fruitfarmToolStripMenuItem.Click += new System.EventHandler(this.fruitfarmToolStripMenuItem_Click);
             // 
             // hunterToolStripMenuItem
             // 
             this.hunterToolStripMenuItem.Name = "hunterToolStripMenuItem";
-            this.hunterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hunterToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.hunterToolStripMenuItem.Text = "Jäger";
             this.hunterToolStripMenuItem.Click += new System.EventHandler(this.hunterToolStripMenuItem_Click);
             // 
             // fischerToolStripMenuItem
             // 
             this.fischerToolStripMenuItem.Name = "fischerToolStripMenuItem";
-            this.fischerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fischerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.fischerToolStripMenuItem.Text = "Fischer";
             this.fischerToolStripMenuItem.Click += new System.EventHandler(this.fischerToolStripMenuItem_Click);
             // 
             // coalmineToolStripMenuItem
             // 
             this.coalmineToolStripMenuItem.Name = "coalmineToolStripMenuItem";
-            this.coalmineToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.coalmineToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.coalmineToolStripMenuItem.Text = "Kohlemine";
             this.coalmineToolStripMenuItem.Click += new System.EventHandler(this.coalmineToolStripMenuItem_Click);
             // 
             // ironmineToolStripMenuItem
             // 
             this.ironmineToolStripMenuItem.Name = "ironmineToolStripMenuItem";
-            this.ironmineToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ironmineToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.ironmineToolStripMenuItem.Text = "Eisenmine";
             this.ironmineToolStripMenuItem.Click += new System.EventHandler(this.ironmineToolStripMenuItem_Click);
             // 
@@ -178,7 +178,7 @@
             this.armorsmithToolStripMenuItem,
             this.bowyerToolStripMenuItem});
             this.refiningToolStripMenuItem.Name = "refiningToolStripMenuItem";
-            this.refiningToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.refiningToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.refiningToolStripMenuItem.Text = "Verarbeitung";
             // 
             // ironsmelterToolStripMenuItem
@@ -212,7 +212,7 @@
             this.streetToolStripMenuItem,
             this.baracksToolStripMenuItem});
             this.specialToolStripMenuItem.Name = "specialToolStripMenuItem";
-            this.specialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.specialToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.specialToolStripMenuItem.Text = "Spezial";
             // 
             // storageToolStripMenuItem
@@ -240,7 +240,7 @@
             this.cityToolStripMenuItem,
             this.megacityToolStripMenuItem});
             this.upgradeToolStripMenuItem.Name = "upgradeToolStripMenuItem";
-            this.upgradeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.upgradeToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.upgradeToolStripMenuItem.Text = "Ausbau";
             // 
             // villageToolStripMenuItem
@@ -353,7 +353,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 339);
+            this.ClientSize = new System.Drawing.Size(570, 417);
             this.Controls.Add(this.activePlayerLabel);
             this.Controls.Add(this.turnLabel);
             this.Controls.Add(this.GameMenu);

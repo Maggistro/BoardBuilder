@@ -154,7 +154,7 @@ namespace BoardBuilders.BoardForms
             if (mainBoard.getActivePlayer().pay(tempUnit.getRecruitmentCost()))
             {
                 status = FIELDSTATUS.RECRUITING;
-                hoverForm.setSize(tempUnit.getSpawningPlace().Count);
+                hoverForm.setSize(1);
                 hoverForm.Show(this);
             }
             else
