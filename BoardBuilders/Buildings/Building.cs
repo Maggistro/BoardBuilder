@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace BoardBuilders
 {
+    enum BUILDINGACTION
+    {
+        NONE, DESTROY, REPAIR, TOGGLEPRODUKTION, RAID, UPGRADE
+    }
     class Building
     {
         //init all building components
@@ -13,9 +17,16 @@ namespace BoardBuilders
         protected List<Card> product = new List<Card>();
         protected bool isActive = false;
         protected List<Card> productionCostList = new List<Card>();
+        protected List<BUILDINGACTION> allowedActions = new List<BUILDINGACTION>();
         protected List<FIELDTYPE> buildPlace = new List<FIELDTYPE>();
         protected int[] position = new int[2];
         protected string name = "";
+
+        //return allowed actions
+        public List<BUILDINGACTION> getAllowedActions()
+        {
+            return allowedActions;
+        }
 
         //place building at position newPos
         public void build(int x, int y)

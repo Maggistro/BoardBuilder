@@ -98,12 +98,18 @@ namespace BoardBuilders.BoardForms
             //to see.
             this.Size = new System.Drawing.Size(100, 100);
             this.Region = new Region(shape);
+            //draw building
             if (building != null)
             {
                 g.DrawImage(building, triangle[1].X / 4, (triangle[1].Y + triangle[2].Y) / 5);
                 g.Flush();
             }
-           
+            //draw unit
+            if (unit != null)
+            {
+                g.DrawImage(unit, triangle[1].X / 4, (triangle[1].Y + triangle[2].Y) / 5);
+                g.Flush();
+            }
         }
 
         //set building image

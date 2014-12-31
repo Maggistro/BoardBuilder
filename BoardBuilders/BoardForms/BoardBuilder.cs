@@ -29,7 +29,9 @@ namespace BoardBuilders.BoardForms
         FIELDSTATUS status;
 
         //additional label for hover information
-        Label infoLabel = new Label();
+        ContextMenuStrip infoMenu = new ContextMenuStrip();
+        ToolStripDropDownButton buildingMenuStrip = new ToolStripDropDownButton();
+        ToolStripDropDownButton unitMenuStrip = new ToolStripDropDownButton();
 
         //form for hover highlighting
         HoverForm hoverForm = new HoverForm();
@@ -50,13 +52,14 @@ namespace BoardBuilders.BoardForms
             this.tempUnit = new Unit();
             
             //set initial info label parameters
-            this.infoLabel.AutoSize = true;
-            this.infoLabel.Location = new System.Drawing.Point(0, 0);
-            this.infoLabel.Size = new System.Drawing.Size(35, 13);
-            this.infoLabel.Parent = this;
-            this.infoLabel.BackColor = Color.White;
-            this.infoLabel.Name = "infoLabel";
-            this.Controls.Add(this.infoLabel);
+            this.infoMenu.AutoSize = true;
+            this.infoMenu.Location = new System.Drawing.Point(0, 0);
+            this.infoMenu.Size = new System.Drawing.Size(35, 13);
+            this.infoMenu.TopLevel = false;
+            this.infoMenu.Parent = this;
+            this.infoMenu.BackColor = Color.White;
+            this.infoMenu.Name = "infoMenu";
+            this.Controls.Add(this.infoMenu);
 
             //set initial hoverForm
             this.LocationChanged += BoardBuilder_LocationChanged; //update hoverform
@@ -66,6 +69,11 @@ namespace BoardBuilders.BoardForms
             
 
             InitializeComponent();
+
+            List<string> DebugPlayerList = new List<string>();
+            DebugPlayerList.Add("Hans");
+            DebugPlayerList.Add("Kurt");
+            generateBoard(10, 10, DebugPlayerList);
         }
 
         //update location of all subforms
@@ -121,18 +129,19 @@ namespace BoardBuilders.BoardForms
             }
         }
         
-
-      
-        public string getBuildingAt(int x, int y)
+        //extract building name from game logic
+        public string getBuildingNameAt(int x, int y)
         {
             return mainBoard.getField(x, y).building.getName();
         }
 
-        private string getUnitAt(int x, int y)
+        //extract unit name from game logic
+        private string getUnitNameAt(int x, int y)
         {
             return mainBoard.getField(x, y).unit.getName();
         }
 
+        //check if building can be paid and init hoverform for placement selection
         private void prepareBuild()
         {
             //check for building cost
@@ -148,6 +157,7 @@ namespace BoardBuilders.BoardForms
             }
         }
 
+        //check if unit can be paid and init hoverform for placement selection
         private void prepareUnit()
         {
             //check for building cost
@@ -163,7 +173,7 @@ namespace BoardBuilders.BoardForms
             }
         }
 
-        //checks if underlying fields match the required field for building
+        //checks if underlying fields allows building
         private bool checkFieldTypeForBuild()
         {
             if (tempBuilding.getBuildPlace().Count == 1){
@@ -227,14 +237,129 @@ namespace BoardBuilders.BoardForms
             return true;
         }
 
+        //populate the popup menu for units depending on allowed actions
+        private void populateUnitMenu(ref Unit unit)
+        {
+            unitMenuStrip.DropDownItems.Clear();
+            foreach(UNITACTION action in unit.getAllowedActions())
+            {
+                ToolStripButton unitActionButton = new ToolStripButton(action.ToString());
+                switch (action)
+                {
+                    case UNITACTION.ATTACK:
+                        unitActionButton.Click += unitActionButton_Attack_Click;
+                        break;
+                    case UNITACTION.MOVE:
+                        unitActionButton.Click += unitActionButton_Move_Click;
+                        break;
+                    case UNITACTION.SCOUT:
+                        unitActionButton.Click += unitActionButton_Scout_Click;
+                        break;
+                    case UNITACTION.SETTLE:
+                        unitActionButton.Click += unitActionButton_Settle_Click;
+                        break;
+                }
+                unitMenuStrip.DropDownItems.Add(unitActionButton);
+            }
+        }
+
+        //populate the popup menu for buildings depending on allowed actions
+        private void populateBuildingMenu(ref Building building)
+        {
+            buildingMenuStrip.DropDownItems.Clear();
+            foreach (BUILDINGACTION action in building.getAllowedActions())
+            {
+                ToolStripButton buildingActionButton = new ToolStripButton(action.ToString());
+                switch (action)
+                {
+                    case BUILDINGACTION.DESTROY:
+                        buildingActionButton.Click += buildingActionButton_Destroy_Click;
+                        break;
+                    case BUILDINGACTION.RAID:
+                        buildingActionButton.Click += buildingActionButton_Raid_Click;
+                        break;
+                    case BUILDINGACTION.REPAIR:
+                        buildingActionButton.Click += buildingActionButton_Repair_Click;
+                        break;
+                    case BUILDINGACTION.TOGGLEPRODUKTION:
+                        buildingActionButton.Click += buildingActionButton_ToggleProduction_Click;
+                        break;
+                    case BUILDINGACTION.UPGRADE:
+                        buildingActionButton.Click += buildingActionButton_Upgrade_Click;
+                        break;
+                }
+
+                buildingMenuStrip.DropDownItems.Add(buildingActionButton);
+            }
+        }
+
+        /**
+         * HANDLER FOR BUILDING ACTIONS
+         * 
+         */
+
+        #region BUILDINGACTIONHANDLER
+
+        void buildingActionButton_Upgrade_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void buildingActionButton_ToggleProduction_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void buildingActionButton_Repair_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void buildingActionButton_Raid_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void buildingActionButton_Destroy_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        /**
+         * HANDLERS FOR UNIT ACTIONS
+         * 
+         */
+
+        #region UNITACTIONHANDLER
+
+        void unitActionButton_Move_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        void unitActionButton_Attack_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        void unitActionButton_Scout_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        void unitActionButton_Settle_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+
         /**
         * HANDLERS FOR BUTTON MOUSE EVENTS
         * 
         */
 
         #region BUTTONMOUSEEVENTS
-        //gets a mouseposition on x,y and checks 
-
 
         //handles click on hoverform
         void hoverForm_Click(object sender, EventArgs e)
@@ -282,29 +407,54 @@ namespace BoardBuilders.BoardForms
         //handler for click on field
         private void FieldButton_Click(object sender, EventArgs e)
         {
-                MessageBox.Show("Clicked at " + ((FieldButton)sender).Name);
+            if (((MouseEventArgs)e).Button == MouseButtons.Left)
+            {
+                infoMenu.Hide();
+                infoMenu.Items.Clear();
+                //MessageBox.Show("Left Clicked at " + ((FieldButton)sender).Name);
+            }
+            else if (((MouseEventArgs)e).Button == MouseButtons.Right)
+            {
+                //MessageBox.Show("Right Clicked at " + ((FieldButton)sender).Name);
+            }
         }
 
         //handler for disbanding hover information
-        void FieldButton_MouseLeave(object sender, EventArgs e)
+        private void FieldButton_MouseLeave(object sender, EventArgs e)
         {
-            infoLabel.Hide();
+            //infoMenu.Hide();
+            //infoMenu.Items.Clear();
             //((FieldButton)sender).ForeColor = Color.Transparent;
         }
         
         //handler for showing hover information
-        void FieldButton_MouseHover(object sender, EventArgs e)
+        private void FieldButton_MouseHover(object sender, EventArgs e)
         {
             if (status == FIELDSTATUS.NORMAL) //if nothing special is active, display information about the field while hovering
             {
+                infoMenu.Hide();
+                infoMenu.Items.Clear();
                 string info = "";
-                info += getUnitAt(((FieldButton)sender).x, ((FieldButton)sender).y);
+                info += getUnitNameAt(((FieldButton)sender).x, ((FieldButton)sender).y);
+                //add unit handler
+                if(info!=""){
+                    populateUnitMenu(ref mainBoard.getField(((FieldButton)sender).x, ((FieldButton)sender).y).unit);
+                    unitMenuStrip.Text = info;
+                    infoMenu.Items.Add(unitMenuStrip);
+                    info = "";
+                }
+
+                info += getBuildingNameAt(((FieldButton)sender).x, ((FieldButton)sender).y);
+                //add building handler
                 if (info != "")
-                    info += " ";
-                info += getBuildingAt(((FieldButton)sender).x, ((FieldButton)sender).y);
-                infoLabel.Text = info;
-                infoLabel.Location = new Point(((FieldButton)sender).drawCenterX, ((FieldButton)sender).drawCenterY);
-                infoLabel.Show();
+                {
+                    populateBuildingMenu(ref mainBoard.getField(((FieldButton)sender).x, ((FieldButton)sender).y).building);
+                    buildingMenuStrip.Text = info;
+                    infoMenu.Items.Add(buildingMenuStrip);
+                    info = "";
+                }
+                infoMenu.Show(new Point(((FieldButton)sender).drawCenterX, ((FieldButton)sender).drawCenterY));
+                infoMenu.PerformLayout();
             }
             else if (status == FIELDSTATUS.BUILDING || status == FIELDSTATUS.RECRUITING) //if player wants to build, highlight field with hoverForm
             {
@@ -319,6 +469,8 @@ namespace BoardBuilders.BoardForms
                 hoverPosition[1] = ((FieldButton)sender).y;
             }
         }
+
+
 
         #endregion
 
@@ -480,17 +632,17 @@ namespace BoardBuilders.BoardForms
 
         private void scoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            throw new NotImplementedException();
         }
 
         private void bowmanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            throw new NotImplementedException();
         }
 
         private void swordsmanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            throw new NotImplementedException();
         }
         #endregion
         

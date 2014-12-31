@@ -12,6 +12,9 @@ namespace BoardBuilders.Buildings
         {
             //set build cost
             buildCostList.Add(new Card(CARDTYPE.WOOD));
+            //set allowed action
+            allowedActions.Add(BUILDINGACTION.DESTROY);
+            allowedActions.Add(BUILDINGACTION.TOGGLEPRODUKTION);
             //set product
             product.Add(new Card(CARDTYPE.WOOD));
             //set active per default

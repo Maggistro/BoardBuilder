@@ -38,6 +38,9 @@ namespace BoardBuilders.Units
             defensePoints = 1;
             attackPoints = 0;
 
+            //set name
+            name = "Settler";
+
             //set allowed actions
             allowedActions.Add(UNITACTION.MOVE);
             allowedActions.Add(UNITACTION.SETTLE);
