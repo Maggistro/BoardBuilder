@@ -103,5 +103,19 @@ namespace BoardBuilders
                 return false;
             }
         }
+
+        //raid building if possible
+        public bool raid(int x_pos, int y_pos)
+        {
+            if (!board[x_pos, y_pos].building.getDamaged()) //if building is intact
+            {
+                board[x_pos, y_pos].building.damage();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

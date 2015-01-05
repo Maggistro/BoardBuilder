@@ -80,10 +80,25 @@ namespace BoardBuilders
         }
 
         //repair building
-        internal void repair()
+        public void repair()
         {
             this.damaged = false;
             toggleActive();
+            allowedActions.Remove(BUILDINGACTION.REPAIR);
+        }
+
+        //damage building
+        public void damage()
+        {
+            this.damaged = true;
+            this.isActive = false;
+            allowedActions.Add(BUILDINGACTION.REPAIR);
+        }
+
+        //returns damaged flag
+        public bool getDamaged()
+        {
+            return this.damaged;
         }
     }
 }

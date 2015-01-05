@@ -361,7 +361,13 @@ namespace BoardBuilders.BoardForms
         }
         void unitActionButton_Raid_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            string[] position = infoMenu.Name.Split(':'); //retrieve position
+            int x_pos = int.Parse(position[0]);
+            int y_pos = int.Parse(position[1]);
+            if (mainBoard.raid(x_pos, y_pos))
+            {
+                mainField[x_pos, y_pos].toggleBurning();
+            }
         }
 
         #endregion

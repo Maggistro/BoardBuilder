@@ -18,7 +18,7 @@ namespace BoardBuilders.BoardForms
         public int x, y, drawX, drawY, drawCenterX, drawCenterY;
         private Bitmap building;
         private Bitmap unit;
-        private Bitmap burning = BoardBuilders.Properties.Resources.damaged;
+        private Bitmap burning;
         private bool damaged = false;
         private Size imageSize;
         Graphics g;
@@ -155,7 +155,17 @@ namespace BoardBuilders.BoardForms
         //toggle burning overlay
         public void toggleBurning()
         {
-            damaged = !damaged;
+            damaged = !damaged; 
+            //position for the image to be drawn relative to the fieldbutton
+            if (damaged)
+            {
+                burning = BoardBuilders.Properties.Resources.damaged;
+                burning.MakeTransparent(Color.White);
+                this.burning = new Bitmap(burning, imageSize);
+                g = this.CreateGraphics();
+                g.DrawImage(unit, triangle[1].X / 4, (triangle[1].Y + triangle[2].Y) / 5);
+                g.Flush();
+            }
             this.Invalidate();
         }
     }

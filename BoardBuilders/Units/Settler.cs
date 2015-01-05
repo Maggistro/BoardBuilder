@@ -44,6 +44,7 @@ namespace BoardBuilders.Units
             //set allowed actions
             allowedActions.Add(UNITACTION.MOVE);
             allowedActions.Add(UNITACTION.SETTLE);
+            allowedActions.Add(UNITACTION.RAID);
 
         }
 
