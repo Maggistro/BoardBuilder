@@ -8,7 +8,7 @@ namespace BoardBuilders
 {
     enum UNITACTION
     {
-        NONE, ATTACK, SETTLE, MOVE, SCOUT
+        NONE, ATTACK, SETTLE, MOVE, SCOUT,RAID
     }
 
     class Unit

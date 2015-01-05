@@ -73,6 +73,16 @@ namespace BoardBuilders.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap damaged {
+            get {
+                object obj = ResourceManager.GetObject("damaged", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Field {
             get {
                 object obj = ResourceManager.GetObject("Field", resourceCulture);

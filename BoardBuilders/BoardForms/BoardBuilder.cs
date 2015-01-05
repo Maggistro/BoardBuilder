@@ -258,6 +258,9 @@ namespace BoardBuilders.BoardForms
                     case UNITACTION.SETTLE:
                         unitActionButton.Click += unitActionButton_Settle_Click;
                         break;
+                    case UNITACTION.RAID:
+                        unitActionButton.Click += unitActionButton_Raid_Click;
+                        break;
                 }
                 unitMenuStrip.DropDownItems.Add(unitActionButton);
             }
@@ -274,9 +277,6 @@ namespace BoardBuilders.BoardForms
                 {
                     case BUILDINGACTION.DESTROY:
                         buildingActionButton.Click += buildingActionButton_Destroy_Click;
-                        break;
-                    case BUILDINGACTION.RAID:
-                        buildingActionButton.Click += buildingActionButton_Raid_Click;
                         break;
                     case BUILDINGACTION.REPAIR:
                         buildingActionButton.Click += buildingActionButton_Repair_Click;
@@ -312,12 +312,14 @@ namespace BoardBuilders.BoardForms
 
         void buildingActionButton_Repair_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
-
-        void buildingActionButton_Raid_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
+            string[] position = infoMenu.Name.Split(':'); //retrieve position
+            int x_pos = int.Parse(position[0]);
+            int y_pos = int.Parse(position[1]);
+            if(mainBoard.repair(x_pos, y_pos)){
+                mainField[x_pos, y_pos].toggleBurning();
+            }else{
+                 MessageBox.Show(this, "Could not repair building. Need " + mainBoard.getField(x_pos,y_pos).building.getRepairCost().ToString());
+            }
         }
 
         void buildingActionButton_Destroy_Click(object sender, EventArgs e)
@@ -351,6 +353,10 @@ namespace BoardBuilders.BoardForms
             throw new NotImplementedException();
         }
         void unitActionButton_Settle_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        void unitActionButton_Raid_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }

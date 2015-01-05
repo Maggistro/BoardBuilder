@@ -137,6 +137,7 @@
     <None Include="assets\Field.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\damaged.bmp" />
     <Content Include="assets\fischer.bmp" />
     <Content Include="assets\hunter.bmp" />
     <Content Include="assets\ironmine.bmp" />

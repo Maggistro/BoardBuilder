@@ -82,11 +82,26 @@ namespace BoardBuilders
             turn++; //increment turn counter
         }
 
+        //destroy building at position x,y
         public void destroy(int x_pos, int y_pos)
         {
             players.ElementAt(activePlayer).removeBuilding(board[x_pos, y_pos].building); //remove building from players buildings
             board[x_pos, y_pos].building = new Building(); //remove Building from board         
 
+        }
+
+        //repair building at position x,y
+        public bool repair(int x_pos, int y_pos)
+        {
+            if (players.ElementAt(activePlayer).pay( board[x_pos, y_pos].building.getRepairCost() ))//check if repair can be paid
+            {
+                board[x_pos, y_pos].building.repair(); // if so repair
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

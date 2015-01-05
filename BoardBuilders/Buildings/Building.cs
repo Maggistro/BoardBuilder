@@ -8,14 +8,14 @@ namespace BoardBuilders
 {
     enum BUILDINGACTION
     {
-        NONE, DESTROY, REPAIR, TOGGLEPRODUKTION, RAID, UPGRADE
+        NONE, DESTROY, REPAIR, TOGGLEPRODUKTION, UPGRADE
     }
     class Building
     {
         //init all building components
         protected List<Card> buildCostList = new List<Card>();
         protected List<Card> product = new List<Card>();
-        protected bool isActive = false;
+        protected bool isActive,damaged = false;
         protected List<Card> productionCostList = new List<Card>();
         protected List<BUILDINGACTION> allowedActions = new List<BUILDINGACTION>();
         protected List<FIELDTYPE> buildPlace = new List<FIELDTYPE>();
@@ -52,7 +52,10 @@ namespace BoardBuilders
         //toggle if building is active
         public void toggleActive()
         {
-            isActive = isActive^isActive;
+            if (!damaged)
+            {
+                isActive = isActive ^ isActive;
+            }
         }
 
         public bool getActive()
@@ -68,6 +71,19 @@ namespace BoardBuilders
         public string getName()
         {
             return name;
+        }
+
+        //returns current repair cost needed to fix building ( half the build cost from the start )
+        public List<Card> getRepairCost()
+        {
+            return this.getBuildCost().GetRange(0, buildCostList.Count/2);
+        }
+
+        //repair building
+        internal void repair()
+        {
+            this.damaged = false;
+            toggleActive();
         }
     }
 }
