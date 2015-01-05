@@ -155,7 +155,7 @@ namespace BoardBuilders.BoardForms
         //toggle burning overlay
         public void toggleBurning()
         {
-            damaged = damaged ^ damaged;
+            damaged = !damaged;
             this.Invalidate();
         }
     }

@@ -85,7 +85,7 @@ namespace BoardBuilders
         //destroy building at position x,y
         public void destroy(int x_pos, int y_pos)
         {
-            players.ElementAt(activePlayer).removeBuilding(board[x_pos, y_pos].building); //remove building from players buildings
+            players.ElementAt(activePlayer).removeBuilding(ref board[x_pos, y_pos].building); //remove building from players buildings
             board[x_pos, y_pos].building = new Building(); //remove Building from board         
 
         }

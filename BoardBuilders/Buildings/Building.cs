@@ -54,7 +54,7 @@ namespace BoardBuilders
         {
             if (!damaged)
             {
-                isActive = isActive ^ isActive;
+                isActive = !isActive;
             }
         }
 

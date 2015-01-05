@@ -307,7 +307,10 @@ namespace BoardBuilders.BoardForms
 
         void buildingActionButton_ToggleProduction_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            string[] position = infoMenu.Name.Split(':'); //retrieve position
+            int x_pos = int.Parse(position[0]);
+            int y_pos = int.Parse(position[1]);
+            mainBoard.getField(x_pos, y_pos).building.toggleActive();
         }
 
         void buildingActionButton_Repair_Click(object sender, EventArgs e)
@@ -381,7 +384,7 @@ namespace BoardBuilders.BoardForms
                 {
                     tempBuilding.build(hoverPosition[0], hoverPosition[1]); //build building
                     mainBoard.getField(hoverPosition[0], hoverPosition[1]).building = tempBuilding; //add to field
-                    mainBoard.getActivePlayer().addBuilding(tempBuilding); //add to players buildings
+                    mainBoard.getActivePlayer().addBuilding(ref mainBoard.getField(hoverPosition[0], hoverPosition[1]).building); //add to players buildings
                     mainField[hoverPosition[0], hoverPosition[1]].setBuildingImage(tempImage);
                 }
                 else

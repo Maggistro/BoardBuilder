@@ -72,13 +72,13 @@ namespace BoardBuilders
         }
 
         //add building to players building list
-        public void addBuilding(Building newBuilding)
+        public void addBuilding(ref Building newBuilding)
         {
             buildings.Add(newBuilding);
         }
 
         //remove building from players building list
-        public void removeBuilding(Building removed)
+        public void removeBuilding(ref Building removed)
         {
             buildings.Remove(removed);
         }
