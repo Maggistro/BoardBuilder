@@ -77,6 +77,12 @@ namespace BoardBuilders
             buildings.Add(newBuilding);
         }
 
+        //remove building from players building list
+        public void removeBuilding(Building removed)
+        {
+            buildings.Remove(removed);
+        }
+
         public List<Card> getHand()
         {
             return hand;

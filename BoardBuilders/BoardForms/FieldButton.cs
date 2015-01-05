@@ -124,6 +124,13 @@ namespace BoardBuilders.BoardForms
             g.Flush();
         }
 
+        //delete buidling image
+        public void resetBuildingImage()
+        {
+            this.building = null; //reset image
+            this.Invalidate(); //redraw
+        }
+
         //set unit Image
         public void setUnitImage(Image unitImage)
         {

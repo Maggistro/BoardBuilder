@@ -81,5 +81,12 @@ namespace BoardBuilders
             players.ElementAt(activePlayer).startTurn(); //start next active players turn
             turn++; //increment turn counter
         }
+
+        public void destroy(int x_pos, int y_pos)
+        {
+            players.ElementAt(activePlayer).removeBuilding(board[x_pos, y_pos].building); //remove building from players buildings
+            board[x_pos, y_pos].building = new Building(); //remove Building from board         
+
+        }
     }
 }

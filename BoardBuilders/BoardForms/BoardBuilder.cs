@@ -322,7 +322,11 @@ namespace BoardBuilders.BoardForms
 
         void buildingActionButton_Destroy_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            string[] position = infoMenu.Name.Split(':'); //retrieve position
+            int x_pos = int.Parse(position[0]);
+            int y_pos = int.Parse(position[1]);
+            mainBoard.destroy(x_pos, y_pos); //remove building entry from game
+            mainField[x_pos, y_pos].resetBuildingImage(); //remove building image
         }
 
         #endregion
@@ -453,6 +457,8 @@ namespace BoardBuilders.BoardForms
                     infoMenu.Items.Add(buildingMenuStrip);
                     info = "";
                 }
+                info = ((FieldButton)sender).x + ":" + ((FieldButton)sender).y;
+                infoMenu.Name = info;
                 infoMenu.Show(new Point(((FieldButton)sender).drawCenterX, ((FieldButton)sender).drawCenterY));
                 infoMenu.PerformLayout();
             }
